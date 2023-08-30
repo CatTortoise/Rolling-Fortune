@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "ee56e4ef-18a4-411f-8407-88755e421da7",
                     "expectedControlType": "Vector3",
-                    "processors": "",
+                    "processors": "InvertVector3,ScaleVector3(z=0)",
                     "interactions": "",
                     "initialStateCheck": true
                 }
