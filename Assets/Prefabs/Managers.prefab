@@ -117,9 +117,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: InGame
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Mobile
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &-1854840313314558859
