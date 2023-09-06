@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private InputManager _inputManager;
+	private Transform _transform;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private Vector3 InputTilt { get => _inputManager.tiltVectorCumulative; }
+
+	private void Awake()
+	{
+		_transform = transform;
+	}
+
+	private void FixedUpdate()
+	{
+		UpdateBoardRotation();
+	}
+
+	private void UpdateBoardRotation()
+	{
+		_transform.rotation = Quaternion.Euler(InputTilt);
+	}
 }
