@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Boulder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void FreezeFor(float seconds)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new NotImplementedException();
     }
 }
