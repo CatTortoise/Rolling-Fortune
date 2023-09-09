@@ -3,22 +3,22 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 	[SerializeField] private InputManager _inputManager;
-	private Transform _transform;
+	[SerializeField] private Rigidbody _rigidBody;
 
 	private Vector3 InputTilt { get => _inputManager.tiltVectorCumulative; }
 
-	private void Awake()
-	{
-		_transform = transform;
-	}
-
 	private void FixedUpdate()
 	{
-		UpdateBoardRotation();
+		ApplyBoardRotation();
 	}
 
-	private void UpdateBoardRotation()
+	private void ApplyBoardRotation()
 	{
-		_transform.rotation = Quaternion.Euler(InputTilt);
+		_rigidBody.rotation = Quaternion.Euler(InputTilt);
+	}
+
+	private void OnValidate()
+	{
+		_rigidBody = GetComponent<Rigidbody>();
 	}
 }
