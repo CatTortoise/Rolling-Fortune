@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -15,7 +14,7 @@ public class InputManager : MonoBehaviour
 
 	private void OnTilt(InputValue value)
 	{
-		var vec = NormalizeGyro(value.Get<Vector3>());
+		var vec = TiltToRotation(value.Get<Vector2>());
 		tiltVectorDelta = vec;
 		tiltVectorCumulative += vec;
 	}
@@ -25,13 +24,14 @@ public class InputManager : MonoBehaviour
 		tiltVectorCumulative = Vector3.zero;
 	}
 
-	private Vector3 NormalizeGyro(Vector3 gyroVector)
+	private Vector3 TiltToRotation(Vector2 gyroVector)
 	{
-		return new Vector3(gyroVector.x, gyroVector.z, gyroVector.y);
+		return new Vector3(gyroVector.x, 0, gyroVector.y);
 	}
 
 	private static void EnableGyroControls()
 	{
-		InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
+		if (UnityEngine.InputSystem.Gyroscope.current != null)
+			InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
 	}
 }
