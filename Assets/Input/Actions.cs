@@ -74,7 +74,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""id"": ""4e592bd2-bd9e-4e27-a045-6b09ba43bbda"",
                     ""path"": ""OneModifier"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""InvertVector2(invertY=false),SwapXY"",
                     ""groups"": """",
                     ""action"": ""Tilt"",
                     ""isComposite"": true,

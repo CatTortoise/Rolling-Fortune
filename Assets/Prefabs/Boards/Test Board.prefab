@@ -561,6 +561,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7465427828647505525}
   - component: {fileID: 1863564645732822784}
+  - component: {fileID: 5665001061934931162}
+  - component: {fileID: 1599507397573057123}
   - component: {fileID: 2996167454586924426}
   m_Layer: 0
   m_Name: Test Board
@@ -593,7 +595,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8029866785784233074}
   serializedVersion: 4
-  m_Mass: 1000000
+  m_Mass: 1e+9
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -612,6 +614,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 46
   m_CollisionDetection: 1
+--- !u!114 &5665001061934931162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029866785784233074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4a6c85507a665564a82e0f2a456745f7,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1599507397573057123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029866785784233074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c096f3277acd5644b8fb2da0b5e3c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidBody: {fileID: 1863564645732822784}
+  _playerInput: {fileID: 5665001061934931162}
 --- !u!114 &2996167454586924426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,8 +671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46a20a2a97395449b6ebbc06dcda89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputManager: {fileID: 0}
-  _rigidBody: {fileID: 1863564645732822784}
 --- !u!1 &8687085146216220787
 GameObject:
   m_ObjectHideFlags: 0
