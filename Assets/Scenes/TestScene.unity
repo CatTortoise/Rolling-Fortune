@@ -776,7 +776,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -869,6 +869,146 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: f04c5e26-81fd-44c6-8bac-f67bbc4d2224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 8814a447-92b4-4b70-8243-0026d160e2d7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 5c91da86-2554-42e1-b030-2a6c162731b1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 518fe950-9848-4770-b830-e48d0301672c
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 50db0130-3ff3-4e21-bf68-f39c8544785c
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 5c0c6724-6c30-4456-a9ac-03a5db3c0e85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 92bc534a-8a29-4bea-95c7-014533a4555b
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: f2b536f3-d06e-49f5-a2a1-2d3d559c9bd4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: f9350f1e-ce73-4aa8-93db-9f9e526c02ec
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: e0b67c01-dfdc-48d8-8749-95784450e762
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: db53ccfe-7860-4e6f-aa36-a1a1cc821980
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: d362e152-dd26-4b26-a8e2-54193faf50e0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player/Tilt[/Mouse/leftButton,/Mouse/delta]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Player/ResetTilt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: UI/Navigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: UI/Submit[/Keyboard/enter,/Keyboard/backspace]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: UI/Cancel[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: UI/Point[/Device Simulator Touchscreen/touch0/position,/Device Simulator
+        Touchscreen/touch1/position,/Device Simulator Touchscreen/touch2/position,/Device
+        Simulator Touchscreen/touch3/position,/Device Simulator Touchscreen/touch4/position,/Device
+        Simulator Touchscreen/touch5/position,/Device Simulator Touchscreen/touch6/position,/Device
+        Simulator Touchscreen/touch7/position,/Device Simulator Touchscreen/touch8/position,/Device
+        Simulator Touchscreen/touch9/position,/Mouse/position,/Device Simulator Touchscreen/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: UI/Click[/Mouse/leftButton,/Device Simulator Touchscreen/touch0/press,/Device
+        Simulator Touchscreen/touch1/press,/Device Simulator Touchscreen/touch2/press,/Device
+        Simulator Touchscreen/touch3/press,/Device Simulator Touchscreen/touch4/press,/Device
+        Simulator Touchscreen/touch5/press,/Device Simulator Touchscreen/touch6/press,/Device
+        Simulator Touchscreen/touch7/press,/Device Simulator Touchscreen/touch8/press,/Device
+        Simulator Touchscreen/touch9/press]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: UI/ScrollWheel[/Mouse/scroll]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/MiddleClick[/Mouse/middleButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: UI/RightClick[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: UI/TrackedDevicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440392862928706318, guid: 729efba58b393734daf7eda5f4d0aa69,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: UI/TrackedDeviceOrientation
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

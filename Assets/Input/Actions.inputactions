@@ -48,15 +48,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "f64439f4-8ab3-4012-988e-f56d84b27c09",
-                    "path": "<Pointer>/delta",
+                    "name": "Mouse Drag",
+                    "id": "4e592bd2-bd9e-4e27-a045-6b09ba43bbda",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "78647de5-6d3c-440e-bfc0-79b6b64514da",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
                     "action": "Tilt",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Binding",
+                    "id": "b45ff66d-7337-4024-973b-daeee6046dad",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
@@ -434,7 +456,7 @@
             "bindingGroup": "PC",
             "devices": [
                 {
-                    "devicePath": "<Pointer>",
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
