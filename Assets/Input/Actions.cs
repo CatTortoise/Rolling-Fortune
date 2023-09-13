@@ -48,7 +48,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Gyro 2D"",
+                    ""name"": ""Gyro"",
                     ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
                     ""path"": ""Gyro2D"",
                     ""interactions"": """",

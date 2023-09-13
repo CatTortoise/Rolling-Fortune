@@ -37,19 +37,19 @@ public class InputRigidbodyRotator : MonoBehaviour
 		ApplyRigidbodyRotation();
 	}
 
-	private void OnTilt(InputValue value)
+	public void OnTilt(InputAction.CallbackContext value)
 	{
-		_tiltDelta += TiltToRotation(value.Get<Vector2>());
+		_tiltDelta += TiltToRotation(value.ReadValue<Vector2>());
+	}
+
+	public void OnResetTilt()
+	{
+		_tiltDelta = Vector3.zero;
 	}
 
 	private void ApplyRigidbodyRotation()
 	{
 		_rigidBody.rotation = Quaternion.Euler(_tiltDelta);
-	}
-
-	public void ResetTilt()
-	{
-		_tiltDelta = Vector3.zero;
 	}
 
 	private Vector3 TiltToRotation(Vector2 gyroVector)
