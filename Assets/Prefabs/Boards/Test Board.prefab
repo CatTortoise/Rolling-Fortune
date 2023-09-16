@@ -562,8 +562,8 @@ GameObject:
   - component: {fileID: 7465427828647505525}
   - component: {fileID: 1863564645732822784}
   - component: {fileID: 5665001061934931162}
-  - component: {fileID: 1599507397573057123}
   - component: {fileID: 2996167454586924426}
+  - component: {fileID: 1599507397573057123}
   m_Layer: 0
   m_Name: Test Board
   m_TagString: Untagged
@@ -727,20 +727,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1599507397573057123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8029866785784233074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c096f3277acd5644b8fb2da0b5e3c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidBody: {fileID: 1863564645732822784}
-  _playerInput: {fileID: 5665001061934931162}
 --- !u!114 &2996167454586924426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,6 +739,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46a20a2a97395449b6ebbc06dcda89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1599507397573057123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029866785784233074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c096f3277acd5644b8fb2da0b5e3c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1863564645732822784}
+  _playerInput: {fileID: 5665001061934931162}
+  _limitRotation: 1
+  _rotationLimit: 30
 --- !u!1 &8687085146216220787
 GameObject:
   m_ObjectHideFlags: 0

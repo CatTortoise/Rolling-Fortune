@@ -4,22 +4,16 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody), typeof(PlayerInput))]
 public class InputRigidbodyRotator : MonoBehaviour
 {
-	[SerializeField] private Rigidbody _rigidBody;
+	[SerializeField] private Rigidbody _rigidbody;
 	[SerializeField] private PlayerInput _playerInput;
-	private Vector3 _initialPosition;
-	private Vector3 _initialRotation;
+	[SerializeField] private bool _limitRotation;
+	[SerializeField] private float _rotationLimit = 180;
 	private Vector3 _tiltDelta = Vector3.zero;
 
 	private void OnValidate()
 	{
-		_rigidBody = GetComponent<Rigidbody>();
+		_rigidbody = GetComponent<Rigidbody>();
 		_playerInput = GetComponent<PlayerInput>();
-	}
-
-	private void Awake()
-	{
-		_initialPosition = _rigidBody.position;
-		_initialRotation = _rigidBody.rotation.eulerAngles;
 	}
 
 	private void OnEnable()
@@ -40,6 +34,8 @@ public class InputRigidbodyRotator : MonoBehaviour
 	public void OnTilt(InputAction.CallbackContext value)
 	{
 		_tiltDelta += TiltToRotation(value.ReadValue<Vector2>());
+		if (_limitRotation)
+			ApplyRotationLimit();
 	}
 
 	public void OnResetTilt()
@@ -49,7 +45,12 @@ public class InputRigidbodyRotator : MonoBehaviour
 
 	private void ApplyRigidbodyRotation()
 	{
-		_rigidBody.rotation = Quaternion.Euler(_tiltDelta);
+		_rigidbody.rotation = Quaternion.Euler(_tiltDelta);
+	}
+
+	private void ApplyRotationLimit()
+	{
+		_tiltDelta = new(ClampAngle(_tiltDelta.x), ClampAngle(_tiltDelta.y), ClampAngle(_tiltDelta.z));
 	}
 
 	private Vector3 TiltToRotation(Vector2 gyroVector)
@@ -67,5 +68,15 @@ public class InputRigidbodyRotator : MonoBehaviour
 	{
 		foreach (var device in _playerInput.user.pairedDevices)
 			InputSystem.DisableDevice(device);
+	}
+
+	private float ClampAngle(float angle)
+	{
+		return Mathf.Clamp(OffsetEulerAngle(angle), -_rotationLimit, _rotationLimit);
+	}
+
+	private static float OffsetEulerAngle(float angle)
+	{
+		return angle < 180 ? angle : angle - 360;
 	}
 }
