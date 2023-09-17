@@ -9,7 +9,7 @@
                     "name": "Tilt",
                     "type": "Value",
                     "id": "f04c5e26-81fd-44c6-8bac-f67bbc4d2224",
-                    "expectedControlType": "Vector3",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -26,15 +26,59 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "97ca7752-76fc-438e-9738-c3197408d878",
+                    "name": "Gyro",
+                    "id": "47587a38-0e4e-42da-a26b-90f17de9fb5e",
+                    "path": "Gyro2D",
+                    "interactions": "",
+                    "processors": "InvertVector2",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "gyroInput",
+                    "id": "5f1c796f-f0ca-4d19-8a9c-7d1136f7dbd4",
                     "path": "<Gyroscope>/angularVelocity",
                     "interactions": "",
-                    "processors": "InvertVector3,ScaleVector3(z=0)",
+                    "processors": "",
                     "groups": "Mobile",
                     "action": "Tilt",
                     "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Mouse Drag",
+                    "id": "4e592bd2-bd9e-4e27-a045-6b09ba43bbda",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "InvertVector2(invertY=false),SwapXY",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "78647de5-6d3c-440e-bfc0-79b6b64514da",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Binding",
+                    "id": "b45ff66d-7337-4024-973b-daeee6046dad",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
@@ -279,6 +323,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3aa1523c-64c0-4ca6-b938-a853bc49c97c",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
                     "path": "*/{Cancel}",
                     "interactions": "",
@@ -301,11 +356,22 @@
                 },
                 {
                     "name": "",
+                    "id": "9f9fdf55-5424-4907-9331-9555f0e72f9f",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4faf7dc9-b979-4210-aa8c-e808e1ef89f5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -338,7 +404,7 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -349,7 +415,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -360,7 +426,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -380,6 +446,17 @@
                 },
                 {
                     "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

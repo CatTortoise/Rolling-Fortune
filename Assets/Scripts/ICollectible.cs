@@ -1,4 +1,0 @@
-interface ICollectible
-{
-    void OnCollect();
-}
