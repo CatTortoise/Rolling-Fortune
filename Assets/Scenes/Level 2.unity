@@ -1238,6 +1238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 5341484938306406755, guid: f63745c46baba68438f3ddbd8e6eb711,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 9084028606672152457}
     - target: {fileID: 8463346927435468107, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: m_RootOrder
@@ -1914,3 +1919,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a3053d5a286344bb5098677df1b0db, type: 3}
+--- !u!20 &9084028606672152457 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6321182417187775709, guid: 32a3053d5a286344bb5098677df1b0db,
+    type: 3}
+  m_PrefabInstance: {fileID: 9084028606672152456}
+  m_PrefabAsset: {fileID: 0}
