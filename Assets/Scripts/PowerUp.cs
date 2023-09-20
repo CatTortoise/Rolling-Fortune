@@ -1,23 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour, ICollectible
+public class PowerUp : MonoBehaviour, ICollectable
 {
-    public void OnCollect()
-    {
-        throw new System.NotImplementedException();
-    }
+    [SerializeField] private Boulder[] _boulders;
+	[SerializeField] private int freezeForSeconds = 5;
 
-    // Start is called before the first frame update
-    void Start()
+	public void OnCollect(Player collector)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (var boulder in _boulders)
+            boulder.FreezeFor(freezeForSeconds);
     }
 }
