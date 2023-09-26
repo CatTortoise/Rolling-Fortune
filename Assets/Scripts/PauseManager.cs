@@ -6,6 +6,7 @@ public class PauseManager : MonoBehaviour
 	[SerializeField] private GameObject _inGameMenu;
 	[SerializeField] private GameObject _pauseMenu;
 	[SerializeField] private PlayerInput _playerInput;
+	[SerializeField] private GameObject[] _objectsToToggle;
 	private InputActionMap _playerActionMap;
 	private bool _paused = false;
 
@@ -27,6 +28,7 @@ public class PauseManager : MonoBehaviour
 		_paused = true;
 		_inGameMenu.SetActive(false);
 		_pauseMenu.SetActive(true);
+		SetAllObjects(false);
 		_playerActionMap.Disable();
 	}
 
@@ -35,6 +37,7 @@ public class PauseManager : MonoBehaviour
 		_paused = false;
 		_inGameMenu.SetActive(true);
 		_pauseMenu.SetActive(false);
+		SetAllObjects(true);
 		_playerActionMap.Enable();
 	}
 
@@ -44,6 +47,12 @@ public class PauseManager : MonoBehaviour
 			ForcePause();
 		else
 			ForceUnPause();
+	}
+
+	private void SetAllObjects(bool active)
+	{
+		foreach (var obj in _objectsToToggle)
+			obj.SetActive(active);
 	}
 
 	private void ToggleState()
