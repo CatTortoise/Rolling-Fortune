@@ -132,24 +132,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ScrollWheel",
-                    "type": "PassThrough",
-                    "id": "f2b536f3-d06e-49f5-a2a1-2d3d559c9bd4",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MiddleClick",
-                    "type": "PassThrough",
-                    "id": "f9350f1e-ce73-4aa8-93db-9f9e526c02ec",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "RightClick",
                     "type": "PassThrough",
                     "id": "e0b67c01-dfdc-48d8-8749-95784450e762",
@@ -159,19 +141,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TrackedDevicePosition",
-                    "type": "PassThrough",
-                    "id": "db53ccfe-7860-4e6f-aa36-a1a1cc821980",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackedDeviceOrientation",
-                    "type": "PassThrough",
-                    "id": "d362e152-dd26-4b26-a8e2-54193faf50e0",
-                    "expectedControlType": "Quaternion",
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "172c7fc7-1a23-42b2-8410-52575257e781",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -400,34 +373,56 @@
                 },
                 {
                     "name": "",
-                    "id": "38c99815-14ea-4617-8627-164d27641299",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "ScrollWheel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "24066f69-da47-44f3-a07e-0015fb02eb2e",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "MiddleClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
                     "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "385c206d-9e10-4719-bc18-404b0dd5a7b1",
+                    "path": "*/{Cancel}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "acc23ad4-0de1-4340-b9b3-8b1c7d42efe8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9eef9745-9f99-4282-9914-92e5bb8048ea",
+                    "path": "*/{Menu}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8f002de-e857-4297-a89a-b893c6dfbe3e",
+                    "path": "*/{Back}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -458,6 +453,11 @@
                 {
                     "devicePath": "<Mouse>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

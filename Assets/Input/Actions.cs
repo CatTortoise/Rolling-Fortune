@@ -154,24 +154,6 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""ScrollWheel"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""f2b536f3-d06e-49f5-a2a1-2d3d559c9bd4"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MiddleClick"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""f9350f1e-ce73-4aa8-93db-9f9e526c02ec"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""RightClick"",
                     ""type"": ""PassThrough"",
                     ""id"": ""e0b67c01-dfdc-48d8-8749-95784450e762"",
@@ -181,19 +163,10 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""TrackedDevicePosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""db53ccfe-7860-4e6f-aa36-a1a1cc821980"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TrackedDeviceOrientation"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""d362e152-dd26-4b26-a8e2-54193faf50e0"",
-                    ""expectedControlType"": ""Quaternion"",
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""172c7fc7-1a23-42b2-8410-52575257e781"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -422,34 +395,56 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""38c99815-14ea-4617-8627-164d27641299"",
-                    ""path"": ""<Mouse>/scroll"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""ScrollWheel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""24066f69-da47-44f3-a07e-0015fb02eb2e"",
-                    ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""MiddleClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""4c191405-5738-4d4b-a523-c6a301dbf754"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""RightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""385c206d-9e10-4719-bc18-404b0dd5a7b1"",
+                    ""path"": ""*/{Cancel}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acc23ad4-0de1-4340-b9b3-8b1c7d42efe8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9eef9745-9f99-4282-9914-92e5bb8048ea"",
+                    ""path"": ""*/{Menu}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8f002de-e857-4297-a89a-b893c6dfbe3e"",
+                    ""path"": ""*/{Back}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -481,6 +476,11 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
                 }
             ]
         }
@@ -497,11 +497,8 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
         m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
-        m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
-        m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
-        m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
-        m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -622,11 +619,8 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Cancel;
     private readonly InputAction m_UI_Point;
     private readonly InputAction m_UI_Click;
-    private readonly InputAction m_UI_ScrollWheel;
-    private readonly InputAction m_UI_MiddleClick;
     private readonly InputAction m_UI_RightClick;
-    private readonly InputAction m_UI_TrackedDevicePosition;
-    private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_Pause;
     public struct UIActions
     {
         private @Actions m_Wrapper;
@@ -636,11 +630,8 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
         public InputAction @Point => m_Wrapper.m_UI_Point;
         public InputAction @Click => m_Wrapper.m_UI_Click;
-        public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
-        public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
-        public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
-        public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -665,21 +656,12 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
-            @ScrollWheel.started += instance.OnScrollWheel;
-            @ScrollWheel.performed += instance.OnScrollWheel;
-            @ScrollWheel.canceled += instance.OnScrollWheel;
-            @MiddleClick.started += instance.OnMiddleClick;
-            @MiddleClick.performed += instance.OnMiddleClick;
-            @MiddleClick.canceled += instance.OnMiddleClick;
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
-            @TrackedDevicePosition.started += instance.OnTrackedDevicePosition;
-            @TrackedDevicePosition.performed += instance.OnTrackedDevicePosition;
-            @TrackedDevicePosition.canceled += instance.OnTrackedDevicePosition;
-            @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
-            @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
-            @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -699,21 +681,12 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
-            @ScrollWheel.started -= instance.OnScrollWheel;
-            @ScrollWheel.performed -= instance.OnScrollWheel;
-            @ScrollWheel.canceled -= instance.OnScrollWheel;
-            @MiddleClick.started -= instance.OnMiddleClick;
-            @MiddleClick.performed -= instance.OnMiddleClick;
-            @MiddleClick.canceled -= instance.OnMiddleClick;
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
-            @TrackedDevicePosition.started -= instance.OnTrackedDevicePosition;
-            @TrackedDevicePosition.performed -= instance.OnTrackedDevicePosition;
-            @TrackedDevicePosition.canceled -= instance.OnTrackedDevicePosition;
-            @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
-            @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
-            @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -761,10 +734,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         void OnCancel(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
-        void OnScrollWheel(InputAction.CallbackContext context);
-        void OnMiddleClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
-        void OnTrackedDevicePosition(InputAction.CallbackContext context);
-        void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

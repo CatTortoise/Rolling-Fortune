@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private bool gameIsPaused;
-
+    public static void ExitGame()
+	{
+		Application.Quit();
+	}
 }
