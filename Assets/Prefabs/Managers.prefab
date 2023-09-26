@@ -127,7 +127,8 @@ MonoBehaviour:
   _playerInput: {fileID: 0}
   _objectsToToggle: []
   _camera: {fileID: 0}
-  _backgroundTexture: {fileID: 8400000, guid: 3e78154962dfed24abfc3e41dee9ba25, type: 2}
+  _pauseMenuBackground: {fileID: 8400000, guid: 3e78154962dfed24abfc3e41dee9ba25,
+    type: 2}
 --- !u!1001 &4540341830121804397
 PrefabInstance:
   m_ObjectHideFlags: 0

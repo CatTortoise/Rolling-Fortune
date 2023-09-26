@@ -165,12 +165,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 876125423}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &402077366 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6321182417187775709, guid: 32a3053d5a286344bb5098677df1b0db,
-    type: 3}
-  m_PrefabInstance: {fileID: 984932534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &542320137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8029866785784233074, guid: 8fb8172c3ab62874d80933fcc5d7dd7a,
@@ -646,7 +640,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7735975445820592415, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 757520673456011174, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
@@ -915,6 +910,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 984932534}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1636254090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2754814222499109162, guid: 32a3053d5a286344bb5098677df1b0db,
+    type: 3}
+  m_PrefabInstance: {fileID: 984932534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636254087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b69cc74745c3d4a88d3251ddba169a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1904774961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,7 +1063,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _camera
       value: 
-      objectReference: {fileID: 402077366}
+      objectReference: {fileID: 1636254090}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _pauseMenu
@@ -1087,6 +1094,11 @@ PrefabInstance:
       propertyPath: _objectsToDisable.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
+        type: 3}
+      propertyPath: _pauseMenuBackgroundMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ef6130a19b72a64c8deebcd69877c30, type: 2}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _objectsToFreeze.Array.data[0]
