@@ -1080,7 +1080,7 @@ PrefabInstance:
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _objectsToToggle.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
