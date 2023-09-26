@@ -1,12 +1,18 @@
 using UnityEngine;
 
-public class Gem : MonoBehaviour, ICollectable
+public class Gem : MonoBehaviour
 {
-	[SerializeField] private PlayerScoreScriptableObject _playerScore;
+    [SerializeField] private PlayerScoreScriptableObject _playerScore;
     [SerializeField] private int scoreForPickup = 5;
+    [SerializeField] private string triggerByTag;
 
-	public void OnCollect(Player collector)
+    private void OnTriggerEnter(Collider other)
     {
-        _playerScore.RaiseScore(scoreForPickup);
+        if (other.gameObject.CompareTag(triggerByTag))
+        {
+            gameObject.SetActive(false);
+        }
     }
+
+
 }

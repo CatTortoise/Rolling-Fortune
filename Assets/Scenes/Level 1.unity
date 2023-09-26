@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 2071557915793422973, guid: 25dc1d964f915c2459d13a6d2ac72db7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000011920929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5141506289125333578, guid: 25dc1d964f915c2459d13a6d2ac72db7,
         type: 3}
@@ -527,6 +527,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -550,6 +560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L Wall Prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764042493142192867, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 7016544208082834613, guid: 845e677737d059047b960424a2bf722e,
         type: 3}
@@ -605,6 +620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047564563274478964, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -684,6 +704,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -769,6 +799,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -848,6 +888,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -926,6 +976,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1011,6 +1071,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: I Wall Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7086854250304073152, guid: d005d3925acda4846917e220e1a81bfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1089,6 +1154,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1169,6 +1244,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1248,6 +1333,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1326,6 +1421,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1430,10 +1535,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1755606546071801960, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
@@ -1473,17 +1583,17 @@ PrefabInstance:
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8755326446236675476, guid: 5e25988992a5c9f4fb46b45c63dfdaa6,
         type: 3}
@@ -1517,6 +1627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L Wall Prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764042493142192867, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 7016544208082834613, guid: 845e677737d059047b960424a2bf722e,
         type: 3}
@@ -1573,6 +1688,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9047564563274478964, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1595,7 +1715,7 @@ PrefabInstance:
     - target: {fileID: 460887163642557850, guid: 1e38c671d34c168409ea1955cc8f8b92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 460887163642557850, guid: 1e38c671d34c168409ea1955cc8f8b92,
         type: 3}
@@ -1662,6 +1782,66 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1640238575}
+    - target: {fileID: 1945261949348902018, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945261949348902018, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: e0b67c01-dfdc-48d8-8749-95784450e762
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945261949348902018, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 172c7fc7-1a23-42b2-8410-52575257e781
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945261949348902018, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: UI/RightClick[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945261949348902018, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/Pause[/Keyboard/escape,/Mouse/backButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966451501699809116, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346574612485799480, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796228885618026298, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819841080439772971, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610889215634106017, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078844746416037753, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136077035138596211, guid: 1e38c671d34c168409ea1955cc8f8b92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1748,6 +1928,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1918,6 +2108,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1940,7 +2140,7 @@ GameObject:
   - component: {fileID: 1688309474}
   m_Layer: 0
   m_Name: Blockers
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,6 +2236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: I Wall Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7086854250304073152, guid: d005d3925acda4846917e220e1a81bfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2115,6 +2320,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2193,6 +2408,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2278,6 +2503,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: I Wall Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7086854250304073152, guid: d005d3925acda4846917e220e1a81bfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2362,6 +2592,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2381,6 +2621,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2446873014623367563, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3966250137288706163, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_Name
@@ -2491,6 +2736,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4618638738722254408, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356064522066039213, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182617874249408405, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2563,6 +2823,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyan gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2643,6 +2913,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2280125543309362092, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
+        type: 3}
+      propertyPath: triggerByTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2678,7 +2958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058994579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5057509, y: 7.702496, z: 6.7265415}
+  m_LocalPosition: {x: -1.505751, y: 7.702496, z: 6.7265415}
   m_LocalScale: {x: 0.33333334, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2713,6 +2993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L Wall Prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764042493142192867, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 7016544208082834613, guid: 845e677737d059047b960424a2bf722e,
         type: 3}
@@ -2769,6 +3054,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9047564563274478964, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2792,6 +3082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L Wall Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764042493142192867, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     - target: {fileID: 7016544208082834613, guid: 845e677737d059047b960424a2bf722e,
         type: 3}
@@ -2847,6 +3142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047564563274478964, guid: 845e677737d059047b960424a2bf722e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2926,6 +3226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: I Wall Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086854250304073152, guid: d005d3925acda4846917e220e1a81bfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
