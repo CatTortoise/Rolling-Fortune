@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46693a42776f07943bd60b3c84a0bf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameIsPaused: 0
 --- !u!1 &7282623767376713625
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +125,7 @@ MonoBehaviour:
   _inGameMenu: {fileID: 0}
   _pauseMenu: {fileID: 0}
   _playerInput: {fileID: 0}
+  _objectsToDisable: []
 --- !u!1001 &4540341830121804397
 PrefabInstance:
   m_ObjectHideFlags: 0
