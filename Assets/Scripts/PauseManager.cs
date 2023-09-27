@@ -6,8 +6,8 @@ public class PauseManager : MonoBehaviour
 	[SerializeField] private GameObject _inGameMenu;
 	[SerializeField] private GameObject _pauseMenu;
 	[SerializeField] private PlayerInput _playerInput;
-	[SerializeField] private GameObject[] _objectsToToggle;
 	[SerializeField] private CameraPause _camera;
+	[SerializeField] private GameObject[] _objectsToToggle;
 	private InputActionMap _playerActionMap;
 	private bool _paused = false;
 
@@ -15,7 +15,7 @@ public class PauseManager : MonoBehaviour
 	{
 		_playerActionMap = _playerInput.actions.FindActionMap("Player");
 		_playerInput.actions.FindAction("Pause").Enable();
-		ForceUnPause();
+		SetPaused(false);
 	}
 
 	public void OnPause()
@@ -24,32 +24,22 @@ public class PauseManager : MonoBehaviour
 		ForceCurrentState();
 	}
 
-	public void ForcePause()
+	public void SetPaused(bool paused)
 	{
-		_paused = true;
-		_camera.SetPaused(true);
-		_inGameMenu.SetActive(false);
-		_pauseMenu.SetActive(true);
-		SetAllObjects(false);
-		_playerActionMap.Disable();
-	}
-
-	public void ForceUnPause()
-	{
-		_paused = false;
-		_camera.SetPaused(false);
-		_inGameMenu.SetActive(true);
-		_pauseMenu.SetActive(false);
-		SetAllObjects(true);
-		_playerActionMap.Enable();
+		_paused = paused;
+		_camera.SetPaused(paused);
+		_inGameMenu.SetActive(!paused);
+		_pauseMenu.SetActive(paused);
+		SetAllObjects(!paused);
+		if (paused)
+			_playerActionMap.Disable();
+		else
+			_playerActionMap.Enable();
 	}
 
 	private void ForceCurrentState()
 	{
-		if (_paused)
-			ForcePause();
-		else
-			ForceUnPause();
+		SetPaused(_paused);
 	}
 
 	private void SetAllObjects(bool active)
@@ -66,6 +56,6 @@ public class PauseManager : MonoBehaviour
 	private void OnApplicationFocus(bool focus)
 	{
 		if (!focus)
-			ForcePause();
+			SetPaused(true);
 	}
 }
