@@ -6,7 +6,7 @@ using UnityEngine;
 public class EscapeHatch : MonoBehaviour
 {
     [SerializeField] private LevelTransitions _transitions;
-    private void OnCollisionEnter(Collision collision) //Fix collision
+    private void OnTriggerEnter(Collision collision) //Fix collision
     {
         if (collision.gameObject.name == "Player")
         {
