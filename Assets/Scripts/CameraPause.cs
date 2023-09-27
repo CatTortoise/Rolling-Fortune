@@ -12,8 +12,8 @@ public class CameraPause : MonoBehaviour
 
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
-		if (_renderTexture == null || _renderTexture.dimension != source.dimension)
-			_renderTexture = new(source.width, source.height, source.depth);
+		if (_renderTexture == null || !CompareSizes(_renderTexture, source))
+			_renderTexture = new(source);
 
 		if (_paused)
 		{
@@ -24,5 +24,10 @@ public class CameraPause : MonoBehaviour
 			Graphics.CopyTexture(source, _renderTexture);
 			Graphics.Blit(source, destination);
 		}
+	}
+
+	private static bool CompareSizes(Texture tex1, Texture tex2)
+	{
+		return tex1.height == tex2.height & tex1.width == tex2.width;
 	}
 }
