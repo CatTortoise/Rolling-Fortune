@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraPause : MonoBehaviour
 {
 	private RenderTexture _renderTexture;
-	private bool _paused;
+	private bool _paused = false;
 
 	public void SetPaused(bool paused)
 	{
@@ -12,7 +12,7 @@ public class CameraPause : MonoBehaviour
 
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
-		if (_renderTexture == null)
+		if (_renderTexture == null || _renderTexture.dimension != source.dimension)
 			_renderTexture = new(source.width, source.height, source.depth);
 
 		if (_paused)
