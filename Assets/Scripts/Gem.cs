@@ -1,15 +1,27 @@
 using UnityEngine;
 
-public class Gem : MonoBehaviour, ICollectable
+public class Gem : MonoBehaviour
 {
-	[SerializeField] private PlayerScoreScriptableObject _playerScore;
-    [SerializeField] private int scoreForPickup = 5;
-    [SerializeField] private LevelTransitions _transitions;
+    [SerializeField] private PlayerScoreScriptableObject _playerScore;
+    [SerializeField] private int _scoreForPickup = 5;
+    [SerializeField] private string _triggerByTag;
 
-	public void OnCollect(Player collector)
+    public int ScoreForPickup { get => _scoreForPickup;private set => _scoreForPickup = value; }
+
+    private void OnTriggerEnter(Collider other)
     {
-        _playerScore.RaiseScore(scoreForPickup);
-        _transitions.GemCollected(this);
-        Destroy(this);
+        if (other.gameObject.CompareTag(_triggerByTag))
+        {
+            gameObject.SetActive(false);
+        }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag(_triggerByTag))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
 }
