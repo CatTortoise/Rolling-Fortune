@@ -24,11 +24,13 @@ public class LevelTransitions : MonoBehaviour
         if (HaveAllGemsBeenCollected)
         {
             _escapeHatch.SetActive(true);
+            //Start loading the next level here
         }
     }
 
     public void TransitionLevel()
     {
+        //Change transition to destroy and instantiate
         _escapeHatch.SetActive(false);
         lvlFolders[currentLevel - 1].SetActive(false);
         currentLevel++;
