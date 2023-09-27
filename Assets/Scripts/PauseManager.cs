@@ -18,10 +18,13 @@ public class PauseManager : MonoBehaviour
 		SetPaused(false);
 	}
 
-	public void OnPause()
+	public void OnPause(InputAction.CallbackContext context)
 	{
-		ToggleState();
-		ForceCurrentState();
+		if (context.performed)
+		{
+			ToggleState();
+			ForceCurrentState();
+		}
 	}
 
 	public void SetPaused(bool paused)
