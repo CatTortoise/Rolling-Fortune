@@ -5,9 +5,15 @@ Temp
 UserSettings
 *.csproj
 *.sln
+Assets/Fantasy UI
+Assets/Fantasy UI.meta
+/Assets/Jewel Pack/
 
 # Visual Studio
 Build
 obj
 .vs
 .vsconfig
+
+
+Assets/Jewel Pack.meta

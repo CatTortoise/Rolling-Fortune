@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody), typeof(PlayerInput))]
+[RequireComponent(typeof(Rigidbody))]
 public class InputRigidbodyRotator : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rigidbody;
@@ -13,17 +13,11 @@ public class InputRigidbodyRotator : MonoBehaviour
 	private void OnValidate()
 	{
 		_rigidbody = GetComponent<Rigidbody>();
-		_playerInput = GetComponent<PlayerInput>();
 	}
 
 	private void OnEnable()
 	{
 		EnableControls();
-	}
-
-	private void OnDisable()
-	{
-		DisableControls();
 	}
 
 	private void FixedUpdate()
