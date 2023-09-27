@@ -13,6 +13,13 @@ public class Gem : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag(triggerByTag))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
 
 }
