@@ -800,12 +800,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
---- !u!1 &1159579806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 785264452117473798, guid: 446a050955bd8dd4f9e18470507bd6dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1564159551792240899}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1159579807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3990722894679180772, guid: 446a050955bd8dd4f9e18470507bd6dd,
@@ -5945,9 +5939,9 @@ MonoBehaviour:
   - {fileID: 1943402644}
   _escapeHatch: {fileID: 980626288}
   lvlFolders:
-  - {fileID: 1159579806}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 785264452117473798, guid: 446a050955bd8dd4f9e18470507bd6dd, type: 3}
+  - {fileID: 6759814311293078316, guid: 243f545ccf0f4e2478dd8857f8034221, type: 3}
+  - {fileID: 7104788324567995974, guid: 29ac19191d8144045b38ba417b1d1c51, type: 3}
   player: {fileID: 1358418894}
 --- !u!1001 &1564159551792240899
 PrefabInstance:
