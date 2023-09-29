@@ -28,11 +28,20 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             ""id"": ""e1b2e037-61a7-4cba-a909-0dde48ca7630"",
             ""actions"": [
                 {
-                    ""name"": ""Tilt"",
+                    ""name"": ""TiltDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""474a55dd-b322-40ec-9a36-6246671c581b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TiltCumulative"",
                     ""type"": ""Value"",
                     ""id"": ""f04c5e26-81fd-44c6-8bac-f67bbc4d2224"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""ClampMagnitude2D(_Magnitude=1)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -48,79 +57,13 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Gyro"",
-                    ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
-                    ""path"": ""Gyro2D"",
-                    ""interactions"": """",
-                    ""processors"": ""InvertVector2,Accumulate2D,ClampMagnitude2D(_Magnitude=1)"",
-                    ""groups"": """",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""gyroInput"",
-                    ""id"": ""5f1c796f-f0ca-4d19-8a9c-7d1136f7dbd4"",
-                    ""path"": ""<Gyroscope>/angularVelocity"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mobile"",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Mouse Drag"",
-                    ""id"": ""4e592bd2-bd9e-4e27-a045-6b09ba43bbda"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.0005208334,y=0.0009259259),InvertVector2(invertY=false),SwapXY,Accumulate2D,ClampMagnitude2D(_Magnitude=1)"",
-                    ""groups"": """",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Modifier"",
-                    ""id"": ""78647de5-6d3c-440e-bfc0-79b6b64514da"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""b45ff66d-7337-4024-973b-daeee6046dad"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""93c96705-1bd2-420e-badc-e6c1f166c353"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": ""InvertVector2(invertY=false),SwapXY"",
                     ""groups"": ""Mobile;PC"",
-                    ""action"": ""Tilt"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""081e46b4-3de6-46a9-9dc0-25bfc979bd24"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": ""InvertVector2(invertY=false),SwapXY"",
-                    ""groups"": ""Mobile;PC"",
-                    ""action"": ""Tilt"",
+                    ""action"": ""TiltCumulative"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -145,6 +88,61 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""action"": ""ResetTilt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Gyro"",
+                    ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
+                    ""path"": ""Gyro2D"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(_Magnitude=1)"",
+                    ""groups"": """",
+                    ""action"": ""TiltDelta"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""gyroInput"",
+                    ""id"": ""5f1c796f-f0ca-4d19-8a9c-7d1136f7dbd4"",
+                    ""path"": ""<Gyroscope>/angularVelocity"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""TiltDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mouse Drag"",
+                    ""id"": ""4e592bd2-bd9e-4e27-a045-6b09ba43bbda"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": ""InvertVector2(invertY=false),SwapXY,ScaleVector2(x=0.01,y=0.01),ClampMagnitude2D(_Magnitude=1)"",
+                    ""groups"": """",
+                    ""action"": ""TiltDelta"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""78647de5-6d3c-440e-bfc0-79b6b64514da"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""TiltDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Binding"",
+                    ""id"": ""b45ff66d-7337-4024-973b-daeee6046dad"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""TiltDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -542,7 +540,8 @@ public partial class @Actions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Tilt = m_Player.FindAction("Tilt", throwIfNotFound: true);
+        m_Player_TiltDelta = m_Player.FindAction("TiltDelta", throwIfNotFound: true);
+        m_Player_TiltCumulative = m_Player.FindAction("TiltCumulative", throwIfNotFound: true);
         m_Player_ResetTilt = m_Player.FindAction("ResetTilt", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -614,13 +613,15 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Tilt;
+    private readonly InputAction m_Player_TiltDelta;
+    private readonly InputAction m_Player_TiltCumulative;
     private readonly InputAction m_Player_ResetTilt;
     public struct PlayerActions
     {
         private @Actions m_Wrapper;
         public PlayerActions(@Actions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Tilt => m_Wrapper.m_Player_Tilt;
+        public InputAction @TiltDelta => m_Wrapper.m_Player_TiltDelta;
+        public InputAction @TiltCumulative => m_Wrapper.m_Player_TiltCumulative;
         public InputAction @ResetTilt => m_Wrapper.m_Player_ResetTilt;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -631,9 +632,12 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Tilt.started += instance.OnTilt;
-            @Tilt.performed += instance.OnTilt;
-            @Tilt.canceled += instance.OnTilt;
+            @TiltDelta.started += instance.OnTiltDelta;
+            @TiltDelta.performed += instance.OnTiltDelta;
+            @TiltDelta.canceled += instance.OnTiltDelta;
+            @TiltCumulative.started += instance.OnTiltCumulative;
+            @TiltCumulative.performed += instance.OnTiltCumulative;
+            @TiltCumulative.canceled += instance.OnTiltCumulative;
             @ResetTilt.started += instance.OnResetTilt;
             @ResetTilt.performed += instance.OnResetTilt;
             @ResetTilt.canceled += instance.OnResetTilt;
@@ -641,9 +645,12 @@ public partial class @Actions: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Tilt.started -= instance.OnTilt;
-            @Tilt.performed -= instance.OnTilt;
-            @Tilt.canceled -= instance.OnTilt;
+            @TiltDelta.started -= instance.OnTiltDelta;
+            @TiltDelta.performed -= instance.OnTiltDelta;
+            @TiltDelta.canceled -= instance.OnTiltDelta;
+            @TiltCumulative.started -= instance.OnTiltCumulative;
+            @TiltCumulative.performed -= instance.OnTiltCumulative;
+            @TiltCumulative.canceled -= instance.OnTiltCumulative;
             @ResetTilt.started -= instance.OnResetTilt;
             @ResetTilt.performed -= instance.OnResetTilt;
             @ResetTilt.canceled -= instance.OnResetTilt;
@@ -778,7 +785,8 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnTilt(InputAction.CallbackContext context);
+        void OnTiltDelta(InputAction.CallbackContext context);
+        void OnTiltCumulative(InputAction.CallbackContext context);
         void OnResetTilt(InputAction.CallbackContext context);
     }
     public interface IUIActions

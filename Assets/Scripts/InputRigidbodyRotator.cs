@@ -9,6 +9,8 @@ public class InputRigidbodyRotator : MonoBehaviour
 	[SerializeField] private float _rotationLimit = 180;
 	private Vector3 _rotation = Vector3.zero;
 
+	private Vector3 ScaledRotation { get => _rotation * _rotationLimit; }
+
 	private void OnValidate()
 	{
 		_rigidbody = GetComponent<Rigidbody>();
@@ -21,13 +23,22 @@ public class InputRigidbodyRotator : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		ClampRotation();
 		ApplyRotationToRigidbody();
 	}
 
-	public void OnTilt(InputAction.CallbackContext value)
+	public void OnTiltCumulative(InputAction.CallbackContext value)
 	{
-		_rotation = TiltToRotation(value.ReadValue<Vector2>());
-		Normalize();
+		if (value.performed)
+			_rotation = TiltToRotation(value.ReadValue<Vector2>());
+		else if (value.canceled)
+			OnResetTilt();
+	}
+
+	public void OnTiltDelta(InputAction.CallbackContext value)
+	{
+		if (value.performed)
+			_rotation += TiltToRotation(value.ReadValue<Vector2>());
 	}
 
 	public void OnResetTilt()
@@ -37,15 +48,22 @@ public class InputRigidbodyRotator : MonoBehaviour
 
 	private void ApplyRotationToRigidbody()
 	{
-		_rigidbody.rotation = Quaternion.Euler(_rotation);
+		_rigidbody.rotation = Quaternion.Euler(ScaledRotation);
 	}
 
-	private void Normalize()
+	private void ClampRotation()
 	{
-		_rotation *= _rotationLimit;
+		_rotation = ClampRotation(_rotation, 1);
 	}
 
-	private Vector3 TiltToRotation(Vector2 tiltVector)
+	private static Vector3 ClampRotation(Vector3 rotation, float clampTo)
+	{
+		if (rotation.magnitude > clampTo)
+			rotation = rotation.normalized * clampTo;
+		return rotation;
+	}
+
+	private static Vector3 TiltToRotation(Vector2 tiltVector)
 	{
 		return new(tiltVector.x, 0, tiltVector.y);
 	}
