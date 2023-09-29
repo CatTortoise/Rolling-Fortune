@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 842719814}
   - component: {fileID: 842719815}
   m_Layer: 0
-  m_Name: ParticleDispenser
+  m_Name: PlayerParticleDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4330609d6a051e54dad4ecf2c08854fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1358418894}
+  _target: {fileID: 1358418894}
   _rigidbody: {fileID: 1358418893}
 --- !u!1 &980626288 stripped
 GameObject:
@@ -990,7 +990,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1744,7 +1744,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 7
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5865,6 +5865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 785264452117473798, guid: 446a050955bd8dd4f9e18470507bd6dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3990722894679180772, guid: 446a050955bd8dd4f9e18470507bd6dd,
         type: 3}

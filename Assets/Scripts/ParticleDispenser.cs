@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ParticleDispenser : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _target;
     [SerializeField] private Rigidbody _rigidbody;
 
     void Update()
     {
-        gameObject.transform.position = _player.transform.position;
+        gameObject.transform.position = _target.transform.position;
         Vector3 velocity = _rigidbody.velocity;
         Vector3 direction = velocity.normalized;
         Quaternion rotateTo = Quaternion.LookRotation(-direction, Vector3.up);
