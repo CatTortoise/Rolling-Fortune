@@ -6,9 +6,8 @@ public class InputRigidbodyRotator : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rigidbody;
 	[SerializeField] private PlayerInput _playerInput;
-	[SerializeField] private bool _limitRotation;
 	[SerializeField] private float _rotationLimit = 180;
-	private Vector3 _tiltDelta = Vector3.zero;
+	private Vector3 _rotation = Vector3.zero;
 
 	private void OnValidate()
 	{
@@ -22,34 +21,33 @@ public class InputRigidbodyRotator : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		ApplyRigidbodyRotation();
+		ApplyRotationToRigidbody();
 	}
 
 	public void OnTilt(InputAction.CallbackContext value)
 	{
-		_tiltDelta += TiltToRotation(value.ReadValue<Vector2>());
-		if (_limitRotation)
-			ApplyRotationLimit();
+		_rotation = TiltToRotation(value.ReadValue<Vector2>());
+		Normalize();
 	}
 
 	public void OnResetTilt()
 	{
-		_tiltDelta = Vector3.zero;
+		_rotation = Vector3.zero;
 	}
 
-	private void ApplyRigidbodyRotation()
+	private void ApplyRotationToRigidbody()
 	{
-		_rigidbody.rotation = Quaternion.Euler(_tiltDelta);
+		_rigidbody.rotation = Quaternion.Euler(_rotation);
 	}
 
-	private void ApplyRotationLimit()
+	private void Normalize()
 	{
-		_tiltDelta = new(ClampAngle(_tiltDelta.x), ClampAngle(_tiltDelta.y), ClampAngle(_tiltDelta.z));
+		_rotation *= _rotationLimit;
 	}
 
-	private Vector3 TiltToRotation(Vector2 gyroVector)
+	private Vector3 TiltToRotation(Vector2 tiltVector)
 	{
-		return new(gyroVector.x, 0, gyroVector.y);
+		return new(tiltVector.x, 0, tiltVector.y);
 	}
 
 	private void EnableControls()
@@ -62,15 +60,5 @@ public class InputRigidbodyRotator : MonoBehaviour
 	{
 		foreach (var device in _playerInput.user.pairedDevices)
 			InputSystem.DisableDevice(device);
-	}
-
-	private float ClampAngle(float angle)
-	{
-		return Mathf.Clamp(OffsetEulerAngle(angle), -_rotationLimit, _rotationLimit);
-	}
-
-	private static float OffsetEulerAngle(float angle)
-	{
-		return angle < 180 ? angle : angle - 360;
 	}
 }

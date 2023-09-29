@@ -52,7 +52,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
                     ""path"": ""Gyro2D"",
                     ""interactions"": """",
-                    ""processors"": ""InvertVector2"",
+                    ""processors"": ""InvertVector2,Accumulate2D,ClampMagnitude2D(_Magnitude=1)"",
                     ""groups"": """",
                     ""action"": ""Tilt"",
                     ""isComposite"": true,
@@ -74,7 +74,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""id"": ""4e592bd2-bd9e-4e27-a045-6b09ba43bbda"",
                     ""path"": ""OneModifier"",
                     ""interactions"": """",
-                    ""processors"": ""InvertVector2(invertY=false),SwapXY"",
+                    ""processors"": ""ScaleVector2(x=0.0005208334,y=0.0009259259),InvertVector2(invertY=false),SwapXY,Accumulate2D,ClampMagnitude2D(_Magnitude=1)"",
                     ""groups"": """",
                     ""action"": ""Tilt"",
                     ""isComposite"": true,
@@ -92,7 +92,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Binding"",
+                    ""name"": ""binding"",
                     ""id"": ""b45ff66d-7337-4024-973b-daeee6046dad"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
