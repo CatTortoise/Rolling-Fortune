@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 6883258102657555302}
   m_Layer: 0
   m_Name: Board
-  m_TagString: Untagged
+  m_TagString: Pauseable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,7 +438,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7128878864936421811}
   _playerInput: {fileID: 5665001061934931162}
-  _limitRotation: 1
   _rotationLimit: 30
 --- !u!1 &5019533256794710876
 GameObject:
