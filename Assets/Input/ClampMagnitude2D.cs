@@ -14,9 +14,9 @@ public class ClampMagnitude2D: InputProcessor<Vector2>
 	{
 		Initialize();
 	}
-	#endif
+#endif
 
-	[RuntimeInitializeOnLoadMethod]
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	static void Initialize()
 	{
 		InputSystem.RegisterProcessor<ClampMagnitude2D>();
