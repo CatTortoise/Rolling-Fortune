@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
 	[SerializeField] private Gem[] _gems;
 	[SerializeField] private Player _player;
+    [SerializeField] private LevelTransitions _levelTransitions;
+    [SerializeField] private UnityAnalyticsManager _analytics;
     private bool _allGemsCollected;
     
     private void Start()
