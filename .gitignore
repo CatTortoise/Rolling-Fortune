@@ -8,6 +8,7 @@ UserSettings
 Assets/Fantasy UI
 Assets/Fantasy UI.meta
 /Assets/Jewel Pack/
+Assets/Jewel Pack.meta
 
 # Visual Studio
 Build
@@ -16,4 +17,4 @@ obj
 .vsconfig
 
 
-Assets/Jewel Pack.meta
+

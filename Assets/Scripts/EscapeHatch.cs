@@ -5,9 +5,11 @@ using UnityEngine;
 public class EscapeHatch : MonoBehaviour
 {
     [SerializeField] private LevelTransitions _transitions;
-    private void OnTriggerEnter(Collision collision) //Fix collision
+    [SerializeField] private string _triggerByTag;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == "Player")
+        if (other.gameObject.CompareTag(_triggerByTag))
         {
             //Add pause here
             //Pull up menu
@@ -15,5 +17,14 @@ public class EscapeHatch : MonoBehaviour
             Debug.Log("beep");
             _transitions.TransitionLevel();
         }
+    }
+
+    public void OpenHatch()
+    {
+        gameObject.SetActive(true);
+    }
+    public void CloseHatch()
+    {
+        gameObject.SetActive(false);
     }
 }

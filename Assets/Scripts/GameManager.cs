@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	[SerializeField] private Gem[] _gems;
 	[SerializeField] private Player _player;
-    private bool _allGemsCollected;
-    
-    private void Start()
-    {
-        _allGemsCollected = false;    
-    }
-
+    [SerializeField] private LevelTransitions _levelTransitions;
+    [SerializeField] private UnityAnalyticsManager _analytics;
 
     private void Update()
     {
@@ -20,17 +14,9 @@ public class GameManager : MonoBehaviour
             {
                 _player.Respond();
             }
-        }
-        for (int i = 0; i < _gems.Length; i++)
-        {
-            if(_gems[i].gameObject.activeSelf)
-            {
-                _allGemsCollected = false;
-                break;
-            }
             else
             {
-                _allGemsCollected = true;
+                _analytics.LevelComplete(0, _player.CurrentLives, false);
             }
         }
     }
