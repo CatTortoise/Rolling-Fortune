@@ -19,6 +19,6 @@ public class OptionsMenu : MonoBehaviour
 	private void OnValidate()
 	{
 		_inputManager = FindAnyObjectByType<InputManager>();
-		_enableGamepad = FindObjectOfType<Toggle>();
+		_enableGamepad = GetComponentInChildren<Toggle>();
 	}
 }

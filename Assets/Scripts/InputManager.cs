@@ -1,11 +1,13 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Gyroscope = UnityEngine.InputSystem.Gyroscope;
+using OnScreenStick = UnityEngine.InputSystem.OnScreen.OnScreenStick;
 
 public class InputManager : MonoBehaviour
 {
 	[SerializeField] private PlayerInput _playerInput;
+	[SerializeField] private GameObject _onScreenJoystick;
+
 	public InputSource ActiveInput { get; private set; }
 
 	private void Start()
@@ -23,11 +25,13 @@ public class InputManager : MonoBehaviour
 		{
 			SetDeviceEnabled<Gyroscope>(true);
 			SetDeviceEnabled<Gamepad>(false);
+			_onScreenJoystick.SetActive(false);
 		}
 		else if (inputSource == InputSource.Gamepad)
 		{
 			SetDeviceEnabled<Gyroscope>(false);
 			SetDeviceEnabled<Gamepad>(true);
+			_onScreenJoystick.SetActive(true);
 		}
 	}
 
@@ -60,6 +64,7 @@ public class InputManager : MonoBehaviour
 	private void OnValidate()
 	{
 		_playerInput = FindAnyObjectByType<PlayerInput>();
+		_onScreenJoystick = FindAnyObjectByType<OnScreenStick>().gameObject;
 	}
 
 	public enum InputSource
