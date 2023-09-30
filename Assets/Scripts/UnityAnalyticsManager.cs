@@ -7,14 +7,13 @@ public class UnityAnalyticsManager : MonoBehaviour
 {
     [SerializeField] private string game_version;
 
-    public void LevelComplete(int level, int LivesLeft , int StartTime , int CompletedTime)
+    public void LevelComplete(int level, int LivesLeft , bool LevelCompleted)
     {
         Dictionary<string, object> analyticsData = new Dictionary<string, object>
         {
             {"Level", level },
             {"LivesLeft", LivesLeft },
-            {"StartLevelTime", StartTime },
-            {"CompletedLevelTime", CompletedTime }
+            {"LevelCompleted", LevelCompleted}
         };
 
         AnalyticsResult DebugCustomEvent = Analytics.CustomEvent(("LevelComplete_" + game_version), analyticsData);
