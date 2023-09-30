@@ -25,7 +25,8 @@ public class GemManager : MonoBehaviour
         if (gemList.Count > 0 ) { HaveAllGemsBeenCollected = false; } else { HaveAllGemsBeenCollected = true; }
         if (HaveAllGemsBeenCollected)
         {
-            levelTransitionsRef.LoadNextLevel();
+            levelTransitionsRef.LoadNextLevelStage();
+            levelTransitionsRef.LoadNextLevelDiamonds();
         }
     }
 }
