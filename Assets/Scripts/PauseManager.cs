@@ -11,6 +11,13 @@ public class PauseManager : MonoBehaviour
 	private InputActionMap _playerActionMap;
 	private bool _paused = false;
 
+	private void OnValidate()
+	{
+		_objectsToToggle = GameObject.FindGameObjectsWithTag("Pauseable");
+		_playerInput = FindAnyObjectByType<PlayerInput>();
+		_camera = FindAnyObjectByType<CameraPause>();
+	}
+
 	private void Start()
 	{
 		_playerActionMap = _playerInput.actions.FindActionMap("Player");
@@ -34,10 +41,7 @@ public class PauseManager : MonoBehaviour
 		_inGameMenu.SetActive(!paused);
 		_pauseMenu.SetActive(paused);
 		SetAllObjects(!paused);
-		if (paused)
-			_playerActionMap.Disable();
-		else
-			_playerActionMap.Enable();
+		SetInputAction(!paused);
 	}
 
 	private void ForceCurrentState()
@@ -49,6 +53,14 @@ public class PauseManager : MonoBehaviour
 	{
 		foreach (var obj in _objectsToToggle)
 			obj.SetActive(active);
+	}
+
+	private void SetInputAction(bool active)
+	{
+		if (active)
+			_playerActionMap.Enable();
+		else
+			_playerActionMap.Disable();
 	}
 
 	private void ToggleState()
