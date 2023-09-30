@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7984117069913945069
 MonoBehaviour:
@@ -44,15 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b237ae8de151234fbee6b19806cfaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1755606546071801960, guid: 5e25988992a5c9f4fb46b45c63dfdaa6, type: 3}
-  _gems: []
-  _escapeHatch: {fileID: 1421874348501557874, guid: a50649efb5f190a4794a9ce32f3e6d63,
-    type: 3}
+  player: {fileID: 0}
+  escapeHatch: {fileID: 0}
   lvlFolders:
   - {fileID: 785264452117473798, guid: 446a050955bd8dd4f9e18470507bd6dd, type: 3}
   - {fileID: 6759814311293078316, guid: 243f545ccf0f4e2478dd8857f8034221, type: 3}
   - {fileID: 7104788324567995974, guid: 29ac19191d8144045b38ba417b1d1c51, type: 3}
-  currentLevel: {fileID: 785264452117473798, guid: 446a050955bd8dd4f9e18470507bd6dd,
-    type: 3}
-  boardParent: {fileID: 923256695064433693, guid: 1e38c671d34c168409ea1955cc8f8b92,
-    type: 3}
+  currentLevel: {fileID: 0}
+  boardParent: {fileID: 0}
