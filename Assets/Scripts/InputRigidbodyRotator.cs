@@ -27,7 +27,7 @@ public class InputRigidbodyRotator : MonoBehaviour
 		if (value.performed)
 			_rotation = TiltToRotation(value.ReadValue<Vector2>());
 		else if (value.canceled)
-			_rotation = Vector3.zero;
+			OnResetTilt();
 	}
 
 	public void OnTiltDelta(InputAction.CallbackContext value)
