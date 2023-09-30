@@ -1,37 +1,24 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-	[SerializeField] private PlayerInput _playerInput;
+	[SerializeField] private InputManager _inputManager;
+	[SerializeField] private Toggle _enableGamepad;
 
-	public void EnableGyro(bool enabled)
+	private void Start()
 	{
-		SetDeviceEnabled<UnityEngine.InputSystem.Gyroscope>(enabled);
+		_enableGamepad.isOn = _inputManager.ActiveInput == InputManager.InputSource.Gamepad;
 	}
 
-	public void EnableGamepad(bool enabled)
+	public void UseGamepad(bool value)
 	{
-		SetDeviceEnabled<Gamepad>(enabled);
-	}
-
-	private void SetDeviceEnabled<T>(bool enabled) where T: InputDevice
-	{
-		var inputDevices = _playerInput.user.pairedDevices;
-		foreach (var device in inputDevices)
-		{
-			if (device is T)
-			{
-				if (enabled)
-					InputSystem.EnableDevice(device);
-				else
-					InputSystem.DisableDevice(device);
-			}
-		}
+		_inputManager.SetInputSource(value ? InputManager.InputSource.Gamepad : InputManager.InputSource.Gyroscope);
 	}
 
 	private void OnValidate()
 	{
-		_playerInput = FindAnyObjectByType<PlayerInput>();
+		_inputManager = FindAnyObjectByType<InputManager>();
+		_enableGamepad = FindObjectOfType<Toggle>();
 	}
 }
