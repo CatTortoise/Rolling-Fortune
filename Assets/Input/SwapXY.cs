@@ -13,9 +13,9 @@ public class SwapXY : InputProcessor<Vector2>
 	{
 		Initialize();
 	}
-	#endif
+#endif
 
-	[RuntimeInitializeOnLoadMethod]
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	static void Initialize()
 	{
 		InputSystem.RegisterProcessor<SwapXY>();
