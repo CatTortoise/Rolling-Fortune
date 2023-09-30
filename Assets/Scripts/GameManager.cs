@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        _allGemsCollected = false;    
+        _allGemsCollected = false;
     }
 
 

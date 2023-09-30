@@ -13,8 +13,8 @@ public class UnityAnalyticsManager : MonoBehaviour
         {
             {"Level", level },
             {"LivesLeft", LivesLeft },
-            {"StartTime", StartTime },
-            {"CompletedTime", CompletedTime }
+            {"StartLevelTime", StartTime },
+            {"CompletedLevelTime", CompletedTime }
         };
 
         AnalyticsResult DebugCustomEvent = Analytics.CustomEvent(("LevelComplete_" + game_version), analyticsData);
