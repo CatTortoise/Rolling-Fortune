@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 [RequireComponent(typeof(Rigidbody))]
 public class InputRigidbodyRotator : MonoBehaviour
