@@ -6,71 +6,60 @@ public class InputRigidbodyRotator : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rigidbody;
 	[SerializeField] private PlayerInput _playerInput;
-	[SerializeField] private bool _limitRotation;
 	[SerializeField] private float _rotationLimit = 180;
-	private Vector3 _tiltDelta = Vector3.zero;
+	private Vector3 _rotation = Vector3.zero;
+
+	private Vector3 ScaledRotation { get => _rotation * _rotationLimit; }
 
 	private void OnValidate()
 	{
 		_rigidbody = GetComponent<Rigidbody>();
 	}
 
-	private void OnEnable()
-	{
-		EnableControls();
-	}
-
 	private void FixedUpdate()
 	{
-		ApplyRigidbodyRotation();
+		ClampRotation();
+		ApplyRotationToRigidbody();
 	}
 
-	public void OnTilt(InputAction.CallbackContext value)
+	public void OnTiltCumulative(InputAction.CallbackContext value)
 	{
-		_tiltDelta += TiltToRotation(value.ReadValue<Vector2>());
-		if (_limitRotation)
-			ApplyRotationLimit();
+		if (value.performed)
+			_rotation = TiltToRotation(value.ReadValue<Vector2>());
+		else if (value.canceled)
+			OnResetTilt();
+	}
+
+	public void OnTiltDelta(InputAction.CallbackContext value)
+	{
+		if (value.performed)
+			_rotation += TiltToRotation(value.ReadValue<Vector2>());
 	}
 
 	public void OnResetTilt()
 	{
-		_tiltDelta = Vector3.zero;
+		_rotation = Vector3.zero;
 	}
 
-	private void ApplyRigidbodyRotation()
+	private void ApplyRotationToRigidbody()
 	{
-		_rigidbody.rotation = Quaternion.Euler(_tiltDelta);
+		_rigidbody.rotation = Quaternion.Euler(ScaledRotation);
 	}
 
-	private void ApplyRotationLimit()
+	private void ClampRotation()
 	{
-		_tiltDelta = new(ClampAngle(_tiltDelta.x), ClampAngle(_tiltDelta.y), ClampAngle(_tiltDelta.z));
+		_rotation = ClampRotation(_rotation, 1);
 	}
 
-	private Vector3 TiltToRotation(Vector2 gyroVector)
+	private static Vector3 ClampRotation(Vector3 rotation, float clampTo)
 	{
-		return new(gyroVector.x, 0, gyroVector.y);
+		if (rotation.magnitude > clampTo)
+			rotation = rotation.normalized * clampTo;
+		return rotation;
 	}
 
-	private void EnableControls()
+	private static Vector3 TiltToRotation(Vector2 tiltVector)
 	{
-		foreach (var device in _playerInput.user.pairedDevices)
-			InputSystem.EnableDevice(device);
-	}
-
-	private void DisableControls()
-	{
-		foreach (var device in _playerInput.user.pairedDevices)
-			InputSystem.DisableDevice(device);
-	}
-
-	private float ClampAngle(float angle)
-	{
-		return Mathf.Clamp(OffsetEulerAngle(angle), -_rotationLimit, _rotationLimit);
-	}
-
-	private static float OffsetEulerAngle(float angle)
-	{
-		return angle < 180 ? angle : angle - 360;
+		return new(tiltVector.x, 0, tiltVector.y);
 	}
 }
