@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1158011280400805660
 MeshFilter:
@@ -122,3 +122,5 @@ MonoBehaviour:
   _playerScore: {fileID: 0}
   _scoreForPickup: 5
   _triggerByTag: Player
+  gemManagerRef: {fileID: 2121872957104697317, guid: 1f7c97d9dcbdbfb4ba851173513eb090,
+    type: 3}

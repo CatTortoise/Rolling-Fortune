@@ -5,8 +5,7 @@ using UnityEngine;
 public class LevelTransitions : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private List<Gem> _gems;
-    [SerializeField] private GameObject _escapeHatch;
+    [SerializeField] private EscapeHatch escapeHatch;
     [SerializeField] private GameObject[] lvlFolders;
     [SerializeField] private GameObject currentLevel;
     [SerializeField] private GameObject boardParent;
@@ -15,29 +14,23 @@ public class LevelTransitions : MonoBehaviour
     private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
     private GameObject tempLevelObject;
 
-    public bool HaveAllGemsBeenCollected { get => _gems.Count == 0; }
-
     private void Start()
     {
         playerStartingPos = player.transform.position;
     }
 
-    public void GemCollected(Gem gem)
+    public void LoadNextLevel()
     {
-        _gems.Remove(gem);
-        if (HaveAllGemsBeenCollected)
-        {
-            _escapeHatch.SetActive(true);
-            tempLevelObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1));
-            if (tempLevelObject != null) { Debug.Log("Loaded object"); }
-            else { Debug.Log("Failed to load object"); }
-        }
+        escapeHatch.OpenHatch();
+        tempLevelObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1));
+        if (tempLevelObject != null) { Debug.Log("Loaded object"); }
+        else { Debug.Log("Failed to load object"); }
     }
 
     public void TransitionLevel()
     {
         Destroy(currentLevel);
-        _escapeHatch.SetActive(false);
+        escapeHatch.CloseHatch();
         currentLevelIndex++;
         currentLevel = Instantiate(tempLevelObject, boardParent.transform);
         currentLevel.SetActive(true);

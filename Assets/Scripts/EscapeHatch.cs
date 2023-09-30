@@ -20,4 +20,12 @@ public class EscapeHatch : MonoBehaviour
         }
     }
 
+    public void OpenHatch()
+    {
+        gameObject.SetActive(true);
+    }
+    public void CloseHatch()
+    {
+        gameObject.SetActive(false);
+    }
 }
