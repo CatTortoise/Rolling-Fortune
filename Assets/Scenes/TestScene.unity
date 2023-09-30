@@ -290,6 +290,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2785298728307663637, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.82251
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718248422056651623, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 1172484955}
     - target: {fileID: 3966250137288706163, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_Name
@@ -1260,17 +1270,17 @@ PrefabInstance:
         type: 3}
       propertyPath: _objectsToToggle.Array.data[0]
       value: 
-      objectReference: {fileID: 694440376}
+      objectReference: {fileID: 1100810455}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _objectsToToggle.Array.data[1]
       value: 
-      objectReference: {fileID: 1261764142}
+      objectReference: {fileID: 694440376}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _objectsToToggle.Array.data[2]
       value: 
-      objectReference: {fileID: 1100810455}
+      objectReference: {fileID: 1261764142}
     - target: {fileID: 8500433936273958936, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _objectsToToggle.Array.data[3]

@@ -16,11 +16,6 @@ public class InputRigidbodyRotator : MonoBehaviour
 		_rigidbody = GetComponent<Rigidbody>();
 	}
 
-	private void OnEnable()
-	{
-		EnableControls();
-	}
-
 	private void FixedUpdate()
 	{
 		ClampRotation();
@@ -66,17 +61,5 @@ public class InputRigidbodyRotator : MonoBehaviour
 	private static Vector3 TiltToRotation(Vector2 tiltVector)
 	{
 		return new(tiltVector.x, 0, tiltVector.y);
-	}
-
-	private void EnableControls()
-	{
-		foreach (var device in _playerInput.user.pairedDevices)
-			InputSystem.EnableDevice(device);
-	}
-
-	private void DisableControls()
-	{
-		foreach (var device in _playerInput.user.pairedDevices)
-			InputSystem.DisableDevice(device);
 	}
 }
