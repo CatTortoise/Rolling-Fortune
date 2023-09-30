@@ -59,7 +59,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""93c96705-1bd2-420e-badc-e6c1f166c353"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": ""InvertVector2(invertY=false),SwapXY"",
                     ""groups"": ""Mobile;PC"",
@@ -107,39 +107,6 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mobile"",
-                    ""action"": ""TiltDelta"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Mouse Drag"",
-                    ""id"": ""4e592bd2-bd9e-4e27-a045-6b09ba43bbda"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": ""InvertVector2(invertY=false),SwapXY,ScaleVector2(x=0.01,y=0.01),ClampMagnitude2D(_Magnitude=1)"",
-                    ""groups"": """",
-                    ""action"": ""TiltDelta"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Modifier"",
-                    ""id"": ""78647de5-6d3c-440e-bfc0-79b6b64514da"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""TiltDelta"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Binding"",
-                    ""id"": ""b45ff66d-7337-4024-973b-daeee6046dad"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
                     ""action"": ""TiltDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
