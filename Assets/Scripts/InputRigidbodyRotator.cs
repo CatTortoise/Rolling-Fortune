@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 [RequireComponent(typeof(Rigidbody))]
 public class InputRigidbodyRotator : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rigidbody;
-	[SerializeField] private PlayerInput _playerInput;
 	[SerializeField] private float _rotationLimit = 180;
 	private Vector3 _rotation = Vector3.zero;
 
@@ -27,7 +28,7 @@ public class InputRigidbodyRotator : MonoBehaviour
 		if (value.performed)
 			_rotation = TiltToRotation(value.ReadValue<Vector2>());
 		else if (value.canceled)
-			OnResetTilt();
+			_rotation = Vector3.zero;
 	}
 
 	public void OnTiltDelta(InputAction.CallbackContext value)
@@ -38,7 +39,7 @@ public class InputRigidbodyRotator : MonoBehaviour
 
 	public void OnResetTilt()
 	{
-		_rotation = Vector3.zero;
+		DOTween.To(() => _rotation, x => _rotation = x, Vector3.zero, _rotation.magnitude);
 	}
 
 	private void ApplyRotationToRigidbody()
