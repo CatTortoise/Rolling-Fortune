@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class LevelTransitions : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private List<Gem> _gems;
     [SerializeField] private GameObject _escapeHatch;
     [SerializeField] private GameObject[] lvlFolders;
-    private int currentLevel = 1;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject currentLevel;
+    [SerializeField] private GameObject boardParent;
+    private int currentLevelIndex = 1;
     private static Vector3 playerStartingPos;
+    private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
+    private GameObject tempLevelObject;
 
     public bool HaveAllGemsBeenCollected { get => _gems.Count == 0; }
 
@@ -24,17 +28,20 @@ public class LevelTransitions : MonoBehaviour
         if (HaveAllGemsBeenCollected)
         {
             _escapeHatch.SetActive(true);
-            //Start loading the next level here
+            tempLevelObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1));
+            if (tempLevelObject != null) { Debug.Log("Loaded object"); }
+            else { Debug.Log("Failed to load object"); }
         }
     }
 
     public void TransitionLevel()
     {
-        //Change transition to destroy and instantiate
+        Destroy(currentLevel);
         _escapeHatch.SetActive(false);
-        lvlFolders[currentLevel - 1].SetActive(false);
-        currentLevel++;
-        lvlFolders[currentLevel - 1].SetActive(true);
+        currentLevelIndex++;
+        currentLevel = Instantiate(tempLevelObject, boardParent.transform);
+        currentLevel.SetActive(true);
+        tempLevelObject = null; //clearing temp object after use
         player.transform.position = playerStartingPos;
         //reset score
     }
