@@ -22,20 +22,30 @@ public class LevelTransitions : MonoBehaviour
         playerStartingPos = player.transform.position;
     }
 
-    public void LoadNextLevelStage()
+
+    private void LoadNextLevelStage()
     {
         tempStageObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1) + RESOURCE_STAGE_PATH);
         if (tempStageObject != null) { Debug.Log("Loaded object"); }
         else { Debug.Log("Failed to load object"); }
     }
-    public void LoadNextLevelDiamonds()
+    private void LoadNextLevelDiamonds()
     {
         tempDiamondsObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1) + RESOURCE_DIAMONDS_PATH);
         if (tempDiamondsObject != null) { Debug.Log("Loaded object"); }
         else { Debug.Log("Failed to load object"); }
     }
 
-    public void TransitionLevel()
+    public void OpenEscapeHatch()
+    {
+        escapeHatch.OpenHatch();
+    }
+    public void CloseEscapeHatch()
+    {
+        escapeHatch.CloseHatch();
+    }
+
+    private void TransitionLevel()
     {
         Destroy(currentLevelStage);
         Destroy(currentLevelDiamonds);
@@ -49,5 +59,12 @@ public class LevelTransitions : MonoBehaviour
         tempDiamondsObject = null; //clearing temp object after use
         player.transform.position = playerStartingPos;
         //reset score
+    }
+
+    public void LoadNextLevel()
+    {
+
+        LoadNextLevelStage();
+        LoadNextLevelDiamonds();
     }
 }

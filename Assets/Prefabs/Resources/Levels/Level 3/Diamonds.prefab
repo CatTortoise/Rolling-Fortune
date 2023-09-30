@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2378710742779967146}
+  - component: {fileID: -6616545191737875771}
   m_Layer: 0
   m_Name: Diamonds
   m_TagString: Untagged
@@ -52,8 +53,23 @@ Transform:
   - {fileID: 4691303913956196750}
   - {fileID: 1274270085243563188}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6616545191737875771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495485097041183318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6be5ab3f1398f47bba4eddac3f4f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemList: []
+  levelTransitionsRef: {fileID: 0}
+  HaveAllGemsBeenCollected: 0
 --- !u!1001 &125266242603991944
 PrefabInstance:
   m_ObjectHideFlags: 0

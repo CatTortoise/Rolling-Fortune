@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
             {
                 _analytics.LevelComplete(0, _player.CurrentLives, false);
             }
+        }else
+        {
+            _levelTransitions.LoadNextLevel();
         }
     }
 

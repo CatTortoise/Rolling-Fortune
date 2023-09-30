@@ -5,21 +5,22 @@ public class Gem : MonoBehaviour
     [SerializeField] private PlayerScoreScriptableObject _playerScore;
     [SerializeField] private int _scoreForPickup = 5;
     [SerializeField] private string _triggerByTag;
-    [SerializeField] private GemManager gemManagerRef;
+    //private GemManager _gemManagerRef;
 
     public int ScoreForPickup { get => _scoreForPickup; private set => _scoreForPickup = value; }
-
-    private void Awake()
-    {
-        gemManagerRef.AddGemToList(this);
-    }
+  //public GemManager GemManagerRef { get => _gemManagerRef; private set => _gemManagerRef = value; }
+    
+    /* private void Awake()
+     {
+         gemManagerRef.AddGemToList(this);
+     }*/
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(_triggerByTag))
         {
             gameObject.SetActive(false);
-            gemManagerRef.GemCollected(this);
+            //_gemManagerRef.GemCollected(gameObject);
         }
     }
 }

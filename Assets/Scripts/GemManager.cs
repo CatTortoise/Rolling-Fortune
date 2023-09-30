@@ -4,29 +4,40 @@ using UnityEngine;
 
 public class GemManager : MonoBehaviour
 {
-    [SerializeField] private List<Gem> gemList;
-    [SerializeField] private LevelTransitions levelTransitionsRef;
-    public bool HaveAllGemsBeenCollected = false;
+    [SerializeField] private GameObject _diamondPrefab;
+    [SerializeField] private List<Transform> _gemPosition;
+    [SerializeField] private List<GameObject> _gemList;
+    [SerializeField] private LevelTransitions _levelTransitionsRef;
+    private bool _haveAllGemsBeenCollected = false;
+    private bool _HalfOfAllGemsBeenCollected = false;
+
+    public bool AllGemsBeenCollected { get => _haveAllGemsBeenCollected; private set => _haveAllGemsBeenCollected = value; }
+    public bool HalfOfAllGemsBeenCollected { get => _HalfOfAllGemsBeenCollected; set => _HalfOfAllGemsBeenCollected = value; }
 
     private void Awake()
     {
-        gemList.Clear();
-        HaveAllGemsBeenCollected = false;
-    }
-
-    public void AddGemToList(Gem gem)
-    {
-        gemList.Add(gem);
-    }
-
-    public void GemCollected(Gem gem)
-    {
-        gemList.Remove(gem);
-        if (gemList.Count > 0 ) { HaveAllGemsBeenCollected = false; } else { HaveAllGemsBeenCollected = true; }
-        if (HaveAllGemsBeenCollected)
+        AllGemsBeenCollected = false;
+        foreach (Transform gemTransform in _gemPosition)
         {
-            levelTransitionsRef.LoadNextLevelStage();
-            levelTransitionsRef.LoadNextLevelDiamonds();
+            _gemList.Add(Instantiate(_diamondPrefab, gemTransform));
         }
+    }
+
+
+    public bool GemCheck ()
+    {
+        if (!AllGemsBeenCollected)
+        {
+            foreach (GameObject gem in _gemList)
+            {
+                if (gameObject.activeSelf)
+                {
+                    AllGemsBeenCollected = false;
+                    return AllGemsBeenCollected;
+                }
+            }
+        }
+        AllGemsBeenCollected = true;
+        return AllGemsBeenCollected;
     }
 }
