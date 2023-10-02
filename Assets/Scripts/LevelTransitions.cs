@@ -16,6 +16,17 @@ public class LevelTransitions : MonoBehaviour
     private const string RESOURCE_DIAMONDS_PATH = "/Diamonds";
     private GameObject tempStageObject;
     private GameObject tempDiamondsObject;
+    private static LevelTransitions instance;
+
+    public static LevelTransitions Instance { get => instance; set => instance = value; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
