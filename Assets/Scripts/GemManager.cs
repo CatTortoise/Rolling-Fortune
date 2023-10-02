@@ -7,7 +7,6 @@ public class GemManager : MonoBehaviour
     [SerializeField] private GameObject _diamondPrefab;
     [SerializeField] private List<Transform> _gemPosition;
     [SerializeField] private List<GameObject> _gemList;
-    [SerializeField] private LevelTransitions _levelTransitionsRef;
     private bool _haveAllGemsBeenCollected = false;
     private bool _HalfOfAllGemsBeenCollected = false;
 
@@ -21,6 +20,7 @@ public class GemManager : MonoBehaviour
         {
             _gemList.Add(Instantiate(_diamondPrefab, gemTransform));
         }
+        LevelTransitions.Instance();
     }
 
 
