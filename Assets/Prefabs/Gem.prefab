@@ -122,5 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerScore: {fileID: 11400000, guid: 7e518caaee83e2f4492db3d5de70e07c, type: 2}
   _gemManager: {fileID: 0}
+  _renderer: {fileID: 1158011280401771996}
   _scoreForPickup: 5
   _triggerByTag: Player
