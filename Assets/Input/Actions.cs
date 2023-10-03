@@ -53,6 +53,15 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""f59cd1fd-0505-471a-bc4d-5e6c892f2e5d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,17 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""action"": ""TiltDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6f64a07-8014-4396-9e15-e7a5c6331e26"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": ""Invert,Scale(factor=0.0005)"",
+                    ""groups"": ""PC"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -510,6 +530,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         m_Player_TiltDelta = m_Player.FindAction("TiltDelta", throwIfNotFound: true);
         m_Player_TiltCumulative = m_Player.FindAction("TiltCumulative", throwIfNotFound: true);
         m_Player_ResetTilt = m_Player.FindAction("ResetTilt", throwIfNotFound: true);
+        m_Player_RotateCamera = m_Player.FindAction("RotateCamera", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -583,6 +604,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TiltDelta;
     private readonly InputAction m_Player_TiltCumulative;
     private readonly InputAction m_Player_ResetTilt;
+    private readonly InputAction m_Player_RotateCamera;
     public struct PlayerActions
     {
         private @Actions m_Wrapper;
@@ -590,6 +612,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         public InputAction @TiltDelta => m_Wrapper.m_Player_TiltDelta;
         public InputAction @TiltCumulative => m_Wrapper.m_Player_TiltCumulative;
         public InputAction @ResetTilt => m_Wrapper.m_Player_ResetTilt;
+        public InputAction @RotateCamera => m_Wrapper.m_Player_RotateCamera;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -608,6 +631,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @ResetTilt.started += instance.OnResetTilt;
             @ResetTilt.performed += instance.OnResetTilt;
             @ResetTilt.canceled += instance.OnResetTilt;
+            @RotateCamera.started += instance.OnRotateCamera;
+            @RotateCamera.performed += instance.OnRotateCamera;
+            @RotateCamera.canceled += instance.OnRotateCamera;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -621,6 +647,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @ResetTilt.started -= instance.OnResetTilt;
             @ResetTilt.performed -= instance.OnResetTilt;
             @ResetTilt.canceled -= instance.OnResetTilt;
+            @RotateCamera.started -= instance.OnRotateCamera;
+            @RotateCamera.performed -= instance.OnRotateCamera;
+            @RotateCamera.canceled -= instance.OnRotateCamera;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -755,6 +784,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         void OnTiltDelta(InputAction.CallbackContext context);
         void OnTiltCumulative(InputAction.CallbackContext context);
         void OnResetTilt(InputAction.CallbackContext context);
+        void OnRotateCamera(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
