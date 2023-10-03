@@ -1,43 +1,31 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(LevelManager))]
 public class GemManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _diamondPrefab;
-    [SerializeField] private List<Transform> _gemPosition;
-    [SerializeField] private List<GameObject> _gemList;
-    private bool _haveAllGemsBeenCollected = false;
-    private bool _HalfOfAllGemsBeenCollected = false;
+    [SerializeField] private LevelManager _levelManager;
+	[SerializeField] private List<Gem> _gemList;
 
-    public bool AllGemsBeenCollected { get => _haveAllGemsBeenCollected; private set => _haveAllGemsBeenCollected = value; }
-    public bool HalfOfAllGemsBeenCollected { get => _HalfOfAllGemsBeenCollected; set => _HalfOfAllGemsBeenCollected = value; }
+	private bool AllGemsCollected { get => !_gemList.Any(); }
 
-    private void Awake()
+    private void OnValidate()
     {
-        AllGemsBeenCollected = false;
-        foreach (Transform gemTransform in _gemPosition)
-        {
-            _gemList.Add(Instantiate(_diamondPrefab, gemTransform));
-        }
-        LevelTransitions.Instance();
+        _levelManager = GetComponent<LevelManager>();
+        _gemList = GetComponentsInChildren<Gem>().ToList();
     }
 
-
-    public bool GemCheck ()
+	private void GemCheck()
     {
-        if (!AllGemsBeenCollected)
-        {
-            foreach (GameObject gem in _gemList)
-            {
-                if (gameObject.activeSelf)
-                {
-                    AllGemsBeenCollected = false;
-                    return AllGemsBeenCollected;
-                }
-            }
-        }
-        AllGemsBeenCollected = true;
-        return AllGemsBeenCollected;
+        if (AllGemsCollected)
+			_levelManager.OpenEscapeHatch();
     }
+
+    public void GemCollected(Gem gem)
+	{
+        if (_gemList.Contains(gem))
+            _gemList.Remove(gem);
+        GemCheck();
+	}
 }

@@ -14,8 +14,6 @@ public class Boulder : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag(triggerByTag))
-        {
-            collision.collider.gameObject.SetActive(false);
-        }
+            collision.collider.gameObject.SetActive(false); // TODO Display a "You died" screen
     }
 }

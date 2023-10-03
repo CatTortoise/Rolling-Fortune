@@ -4,8 +4,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 	[SerializeField] private Player _player;
-	[SerializeField] private LevelTransitions _levelTransitions;
 	[SerializeField] private UnityAnalyticsManager _analytics;
+
+	public static GameManager Instance { get; private set; }
+
+	private void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(this);
+		}
+	}
 
 	private void Update()
 	{
