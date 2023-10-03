@@ -3,18 +3,22 @@ using UnityEngine;
 public class LevelTransitions : MonoBehaviour
 {
 	private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
-	private int _currentLevelIndex = 0;
 	private GameObject _currentLevelAsset;
 	private GameObject _currentLevelInstance;
 	[SerializeField] private PlayerScoreScriptableObject _playerScore;
 	[SerializeField] private Transform _spawnLevelHere;
 
 	public static LevelTransitions Instance { get; private set; }
+	public int CurrentLevelIndex { get; private set; }
 
 	private void Awake()
 	{
+		CurrentLevelIndex = 0;
 		if (Instance == null)
+		{
 			Instance = this;
+			DontDestroyOnLoad(this);
+		}
 	}
 
 	private void Start()
@@ -22,10 +26,18 @@ public class LevelTransitions : MonoBehaviour
 		LoadIntoNextLevel();
 	}
 
+	public void RestartCurrentLevel()
+	{
+		if (_currentLevelInstance != null)
+			Destroy(_currentLevelInstance);
+		_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
+		_playerScore.ResetScore();
+	}
+
 	public void LoadIntoNextLevel()
 	{
-		_currentLevelIndex++;
-		LoadIntoLevel(_currentLevelIndex);
+		CurrentLevelIndex++;
+		LoadIntoLevel(CurrentLevelIndex);
 	}
 
 	public void LoadIntoLevel(int level)
@@ -33,11 +45,8 @@ public class LevelTransitions : MonoBehaviour
 		GameObject nextLevel = LoadLevelAsset(level);
 		if (nextLevel != null)
 		{
-			if (_currentLevelInstance != null)
-				Destroy(_currentLevelInstance);
 			_currentLevelAsset = nextLevel;
-			_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
-			_playerScore.ResetScore();
+			RestartCurrentLevel();
 		}
 	}
 

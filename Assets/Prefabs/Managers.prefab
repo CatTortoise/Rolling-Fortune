@@ -33,6 +33,7 @@ Transform:
   - {fileID: 7939157612033016816}
   - {fileID: 4820571596367232528}
   - {fileID: 7003243695400098671}
+  - {fileID: 2452543915468364742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044085555635132262
@@ -82,6 +83,51 @@ MonoBehaviour:
   _onScreenJoystick: {fileID: 0}
   _playerInput: {fileID: 0}
   InputModule: {fileID: 0}
+--- !u!1 &2158903470266850659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2452543915468364742}
+  - component: {fileID: 2365847512608883169}
+  m_Layer: 0
+  m_Name: Unity Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2452543915468364742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158903470266850659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8463346927435468107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2365847512608883169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158903470266850659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032e249dbbd799244a66733abf28f14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameVersion: 0.1
 --- !u!1 &3208010459392387648
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,4 +309,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b237ae8de151234fbee6b19806cfaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentLevelInstance: {fileID: 0}
+  _playerScore: {fileID: 0}
+  _spawnLevelHere: {fileID: 0}

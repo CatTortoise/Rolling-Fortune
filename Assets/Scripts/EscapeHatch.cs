@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class EscapeHatch : MonoBehaviour
 {
+    [SerializeField] private Player _player;
     [SerializeField] private string _triggerByTag;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(_triggerByTag))
-            LevelTransitions.Instance.LoadIntoNextLevel();
+			_player.OnEndLevel(transform);
     }
 
     public void OpenHatch()

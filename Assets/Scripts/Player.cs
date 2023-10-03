@@ -1,40 +1,29 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Collider _collider;
 	[SerializeField] private int maxLives;
-	private int _currentLives;
-    private Vector3 _startingPosition;
 
-    public int CurrentLives { get => _currentLives; private set => _currentLives = value; }
+    public int CurrentLives { get; private set; }
 
     private void Start()
     {
         CurrentLives = maxLives;
-        _startingPosition = transform.position;
-    }
-    /*
-    private void OnCollisionEnter(Collision other)
-	{
-		GameObject _gameObject = other.gameObject;
-		Debug.Log($"I collided with {_gameObject.tag}");
-		if (_gameObject.CompareTag(ICollectable.COLLECTABLE_TAG))
-		{
-			_gameObject.GetComponent<ICollectable>().OnCollect(this);
-		}
-	}*/
-    public void Respond()
-    {
-        if (!gameObject.activeSelf)
-        {
-            transform.position = _startingPosition;
-            gameObject.SetActive(true);
-        }
     }
 
-    private void OnDisable()
+    public void OnEndLevel(Transform escapeHatchTransform)
     {
+        _collider.enabled = false;
+		transform.DOMove(escapeHatchTransform.position, 2).SetEase(Ease.OutCirc).OnComplete(() => LevelTransitions.Instance.LoadIntoNextLevel());
+        UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, CurrentLives, true);
+    }
 
+    public void OnDeath()
+    {
         CurrentLives--;
-    }
+        LevelTransitions.Instance.RestartCurrentLevel();
+        UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, CurrentLives, false);
+	}
 }
