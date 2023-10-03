@@ -1,53 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelTransitions : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private EscapeHatch escapeHatch;
-    [SerializeField] private GameObject currentLevelStage;
-    [SerializeField] private GameObject currentLevelDiamonds;
-    [SerializeField] private GameObject boardParent;
-    private int currentLevelIndex = 1;
-    private static Vector3 playerStartingPos;
-    private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
-    private const string RESOURCE_STAGE_PATH = "/Stage";
-    private const string RESOURCE_DIAMONDS_PATH = "/Diamonds";
-    private GameObject tempStageObject;
-    private GameObject tempDiamondsObject;
+	private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
+	private int _currentLevelIndex = 0;
+	private GameObject _currentLevelAsset;
+	private GameObject _currentLevelInstance;
+	[SerializeField] private PlayerScoreScriptableObject _playerScore;
+	[SerializeField] private Transform _spawnLevelHere;
 
-    private void Start()
-    {
-        playerStartingPos = player.transform.position;
-    }
+	public static LevelTransitions Instance { get; private set; }
 
-    public void LoadNextLevelStage()
-    {
-        tempStageObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1) + RESOURCE_STAGE_PATH);
-        if (tempStageObject != null) { Debug.Log("Loaded object"); }
-        else { Debug.Log("Failed to load object"); }
-    }
-    public void LoadNextLevelDiamonds()
-    {
-        tempDiamondsObject = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + (currentLevelIndex + 1) + RESOURCE_DIAMONDS_PATH);
-        if (tempDiamondsObject != null) { Debug.Log("Loaded object"); }
-        else { Debug.Log("Failed to load object"); }
-    }
+	private void Awake()
+	{
+		if (Instance == null)
+			Instance = this;
+	}
 
-    public void TransitionLevel()
-    {
-        Destroy(currentLevelStage);
-        Destroy(currentLevelDiamonds);
-        escapeHatch.CloseHatch();
-        currentLevelIndex++;
-        currentLevelStage = Instantiate(tempStageObject, boardParent.transform);
-        currentLevelDiamonds = Instantiate(tempDiamondsObject, boardParent.transform);
-        currentLevelStage.SetActive(true);
-        currentLevelDiamonds.SetActive(true);
-        tempStageObject = null; //clearing temp object after use
-        tempDiamondsObject = null; //clearing temp object after use
-        player.transform.position = playerStartingPos;
-        //reset score
-    }
+	private void Start()
+	{
+		LoadIntoNextLevel();
+	}
+
+	public void LoadIntoNextLevel()
+	{
+		_currentLevelIndex++;
+		LoadIntoLevel(_currentLevelIndex);
+	}
+
+	public void LoadIntoLevel(int level)
+	{
+		GameObject nextLevel = LoadLevelAsset(level);
+		if (nextLevel != null)
+		{
+			if (_currentLevelInstance != null)
+				Destroy(_currentLevelInstance);
+			_currentLevelAsset = nextLevel;
+			_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
+			_playerScore.ResetScore();
+		}
+	}
+
+	private GameObject LoadLevelAsset(int levelIndex)
+	{
+		GameObject level = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + levelIndex);
+		if (level != null)
+			Debug.Log("Loaded level.");
+		else
+			Debug.Log("Failed to load level.");
+
+		return level;
+	}
 }

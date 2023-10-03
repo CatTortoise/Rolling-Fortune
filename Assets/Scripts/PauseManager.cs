@@ -5,23 +5,20 @@ public class PauseManager : MonoBehaviour
 {
 	[SerializeField] private GameObject _inGameMenu;
 	[SerializeField] private GameObject _pauseMenu;
-	[SerializeField] private PlayerInput _playerInput;
 	[SerializeField] private CameraPause _camera;
 	[SerializeField] private GameObject[] _objectsToToggle;
-	private InputActionMap _playerActionMap;
 	private bool _paused = false;
 
-	private void OnValidate()
+	public static PauseManager Instance { get; private set; }
+
+	private void Awake()
 	{
-		_objectsToToggle = GameObject.FindGameObjectsWithTag("Pauseable");
-		_playerInput = FindAnyObjectByType<PlayerInput>();
-		_camera = FindAnyObjectByType<CameraPause>();
+		if (Instance == null)
+			Instance = this;
 	}
 
 	private void Start()
 	{
-		_playerActionMap = _playerInput.actions.FindActionMap("Player");
-		_playerInput.actions.FindAction("Pause").Enable();
 		SetPaused(false);
 	}
 
@@ -40,8 +37,8 @@ public class PauseManager : MonoBehaviour
 		_camera.SetPaused(paused);
 		_inGameMenu.SetActive(!paused);
 		_pauseMenu.SetActive(paused);
+		SetPlayerInputAction(!paused);
 		SetAllObjects(!paused);
-		SetInputAction(!paused);
 	}
 
 	private void ForceCurrentState()
@@ -55,12 +52,9 @@ public class PauseManager : MonoBehaviour
 			obj.SetActive(active);
 	}
 
-	private void SetInputAction(bool active)
+	private void SetPlayerInputAction(bool active)
 	{
-		if (active)
-			_playerActionMap.Enable();
-		else
-			_playerActionMap.Disable();
+		InputManager.Instance.SetPlayerInputAction(active);
 	}
 
 	private void ToggleState()

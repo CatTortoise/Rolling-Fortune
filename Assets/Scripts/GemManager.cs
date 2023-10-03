@@ -1,32 +1,31 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(LevelManager))]
 public class GemManager : MonoBehaviour
 {
-    [SerializeField] private List<Gem> gemList;
-    [SerializeField] private LevelTransitions levelTransitionsRef;
-    public bool HaveAllGemsBeenCollected = false;
+    [SerializeField] private LevelManager _levelManager;
+	[SerializeField] private List<Gem> _gemList;
 
-    private void Awake()
+	private bool AllGemsCollected { get => !_gemList.Any(); }
+
+    private void OnValidate()
     {
-        gemList.Clear();
-        HaveAllGemsBeenCollected = false;
+        _levelManager = GetComponent<LevelManager>();
+        _gemList = GetComponentsInChildren<Gem>().ToList();
     }
 
-    public void AddGemToList(Gem gem)
+	private void GemCheck()
     {
-        gemList.Add(gem);
+        if (AllGemsCollected)
+			_levelManager.OpenEscapeHatch();
     }
 
     public void GemCollected(Gem gem)
-    {
-        gemList.Remove(gem);
-        if (gemList.Count > 0 ) { HaveAllGemsBeenCollected = false; } else { HaveAllGemsBeenCollected = true; }
-        if (HaveAllGemsBeenCollected)
-        {
-            levelTransitionsRef.LoadNextLevelStage();
-            levelTransitionsRef.LoadNextLevelDiamonds();
-        }
-    }
+	{
+        if (_gemList.Contains(gem))
+            _gemList.Remove(gem);
+        GemCheck();
+	}
 }

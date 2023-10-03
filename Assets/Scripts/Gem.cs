@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    [SerializeField] private PlayerScoreScriptableObject _playerScore;
-    [SerializeField] private int _scoreForPickup = 5;
-    [SerializeField] private string _triggerByTag;
-    [SerializeField] private GemManager gemManagerRef;
+	[SerializeField] private PlayerScoreScriptableObject _playerScore;
+	[SerializeField] private GemManager _gemManager;
+	[SerializeField] private int _scoreForPickup = 5;
+	[SerializeField] private string _triggerByTag;
 
-    public int ScoreForPickup { get => _scoreForPickup; private set => _scoreForPickup = value; }
+	public int ScoreForPickup { get => _scoreForPickup; }
 
-    private void Awake()
-    {
-        gemManagerRef.AddGemToList(this);
-    }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag(_triggerByTag))
+			CollectGem();
+	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(_triggerByTag))
-        {
-            gameObject.SetActive(false);
-            gemManagerRef.GemCollected(this);
-        }
-    }
+	private void CollectGem()
+	{
+		_playerScore.RaiseScore(ScoreForPickup);
+		_gemManager.GemCollected(this);
+		gameObject.SetActive(false);
+	}
 }
