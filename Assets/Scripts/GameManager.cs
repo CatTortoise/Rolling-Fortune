@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
 	public static void ExitToMainMenu()
 	{
+		DOTween.KillAll();
 		SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Single);
 	}
 
