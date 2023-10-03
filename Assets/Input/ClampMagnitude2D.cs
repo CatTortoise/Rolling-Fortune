@@ -7,14 +7,14 @@ using UnityEngine;
 #endif
 public class ClampMagnitude2D: InputProcessor<Vector2>
 {
-	public float _Magnitude;
+	public float magnitude;
 
 	#if UNITY_EDITOR
 	static ClampMagnitude2D()
 	{
 		Initialize();
 	}
-#endif
+	#endif
 
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	static void Initialize()
@@ -24,6 +24,6 @@ public class ClampMagnitude2D: InputProcessor<Vector2>
 
 	public override Vector2 Process(Vector2 value, InputControl control)
 	{
-		return value.magnitude > _Magnitude ? value.normalized * _Magnitude : value;
+		return value.magnitude > magnitude ? value.normalized * magnitude : value;
 	}
 }

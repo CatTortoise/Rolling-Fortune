@@ -13,7 +13,7 @@ public class SwapXY : InputProcessor<Vector2>
 	{
 		Initialize();
 	}
-#endif
+	#endif
 
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	static void Initialize()

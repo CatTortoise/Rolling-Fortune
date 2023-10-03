@@ -41,7 +41,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""f04c5e26-81fd-44c6-8bac-f67bbc4d2224"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""ClampMagnitude2D(_Magnitude=1)"",
+                    ""processors"": ""ClampMagnitude2D(magnitude=1)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -55,7 +55,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RotateCamera"",
+                    ""name"": ""ZoomCamera"",
                     ""type"": ""Value"",
                     ""id"": ""f59cd1fd-0505-471a-bc4d-5e6c892f2e5d"",
                     ""expectedControlType"": ""Axis"",
@@ -103,7 +103,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
                     ""path"": ""Gyro2D"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(_Magnitude=1)"",
+                    ""processors"": ""ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(magnitude=1)"",
                     ""groups"": """",
                     ""action"": ""TiltDelta"",
                     ""isComposite"": true,
@@ -127,7 +127,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""Invert,Scale(factor=0.0005)"",
                     ""groups"": ""PC"",
-                    ""action"": ""RotateCamera"",
+                    ""action"": ""ZoomCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -530,7 +530,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         m_Player_TiltDelta = m_Player.FindAction("TiltDelta", throwIfNotFound: true);
         m_Player_TiltCumulative = m_Player.FindAction("TiltCumulative", throwIfNotFound: true);
         m_Player_ResetTilt = m_Player.FindAction("ResetTilt", throwIfNotFound: true);
-        m_Player_RotateCamera = m_Player.FindAction("RotateCamera", throwIfNotFound: true);
+        m_Player_ZoomCamera = m_Player.FindAction("ZoomCamera", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -604,7 +604,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TiltDelta;
     private readonly InputAction m_Player_TiltCumulative;
     private readonly InputAction m_Player_ResetTilt;
-    private readonly InputAction m_Player_RotateCamera;
+    private readonly InputAction m_Player_ZoomCamera;
     public struct PlayerActions
     {
         private @Actions m_Wrapper;
@@ -612,7 +612,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         public InputAction @TiltDelta => m_Wrapper.m_Player_TiltDelta;
         public InputAction @TiltCumulative => m_Wrapper.m_Player_TiltCumulative;
         public InputAction @ResetTilt => m_Wrapper.m_Player_ResetTilt;
-        public InputAction @RotateCamera => m_Wrapper.m_Player_RotateCamera;
+        public InputAction @ZoomCamera => m_Wrapper.m_Player_ZoomCamera;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -631,9 +631,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @ResetTilt.started += instance.OnResetTilt;
             @ResetTilt.performed += instance.OnResetTilt;
             @ResetTilt.canceled += instance.OnResetTilt;
-            @RotateCamera.started += instance.OnRotateCamera;
-            @RotateCamera.performed += instance.OnRotateCamera;
-            @RotateCamera.canceled += instance.OnRotateCamera;
+            @ZoomCamera.started += instance.OnZoomCamera;
+            @ZoomCamera.performed += instance.OnZoomCamera;
+            @ZoomCamera.canceled += instance.OnZoomCamera;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -647,9 +647,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             @ResetTilt.started -= instance.OnResetTilt;
             @ResetTilt.performed -= instance.OnResetTilt;
             @ResetTilt.canceled -= instance.OnResetTilt;
-            @RotateCamera.started -= instance.OnRotateCamera;
-            @RotateCamera.performed -= instance.OnRotateCamera;
-            @RotateCamera.canceled -= instance.OnRotateCamera;
+            @ZoomCamera.started -= instance.OnZoomCamera;
+            @ZoomCamera.performed -= instance.OnZoomCamera;
+            @ZoomCamera.canceled -= instance.OnZoomCamera;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -784,7 +784,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         void OnTiltDelta(InputAction.CallbackContext context);
         void OnTiltCumulative(InputAction.CallbackContext context);
         void OnResetTilt(InputAction.CallbackContext context);
-        void OnRotateCamera(InputAction.CallbackContext context);
+        void OnZoomCamera(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
