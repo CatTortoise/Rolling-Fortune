@@ -108,9 +108,9 @@ public class PhoneCam : MonoBehaviour
             webCam.Stop();
             webCam = null;
             background.texture = null;
+            if (currentSnapshot != null) { currentSnapshot = CutSnapshot(); }
             Sprite sp = Sprite.Create(currentSnapshot, new Rect(0, 0, currentSnapshot.width, currentSnapshot.height),
                 new Vector2(0.5f, 0.5f));
-            CutScreenshot();//Finish that function
             PFPShowcaser.sprite = sp;
             PFPShowcaser.gameObject.SetActive(true);
             takePictureButton.SetActive(false);
@@ -156,8 +156,11 @@ public class PhoneCam : MonoBehaviour
         return texture;
     }
 
-    private void CutScreenshot()
+    private Texture2D CutSnapshot()
     {
-        //Cut the screenshot to fit inside PFP Showcaser
+        Texture2D tempTex = new Texture2D(resWidth, resHeight);
+        Graphics.CopyTexture(currentSnapshot, 0, 0, 346, 454, resWidth, resHeight, tempTex, 0, 0, 0, 0);
+        currentSnapshot = tempTex;
+        return tempTex;
     }
 }
