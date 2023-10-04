@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows;
+using System.IO;
 
 public class PhoneCam : MonoBehaviour
 {
@@ -103,7 +103,8 @@ public class PhoneCam : MonoBehaviour
         {
             StartCoroutine(SimpleCapture());
             Debug.Log("Snapshot taken");
-            currentSnapshot = GetScreenshot(currentSnapshotPath);//Figure out why it can't find the file
+            currentSnapshot = GetScreenshot(currentSnapshotPath); //Figure out why it can't find the file
+            if (currentSnapshot == null) { currentSnapshot = (Texture2D)playerProfilePicture.texture; Debug.Log("Failed to find snapshot"); }
             webCam.Stop();
             webCam = null;
             background.texture = null;
