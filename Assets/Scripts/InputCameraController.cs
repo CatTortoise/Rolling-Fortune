@@ -7,7 +7,7 @@ public class InputCameraController : MonoBehaviour
     [SerializeField] private float _maxFov = 90;
     [SerializeField] private float _minFov = 30;
     private float _fovDiff;
-	private float _currentFoVCoefficient;
+	public float CurrentFoVCoefficient { get; private set; }
 
 	private void Awake()
 	{
@@ -16,16 +16,24 @@ public class InputCameraController : MonoBehaviour
 
 	private void Start()
 	{
-		_currentFoVCoefficient = (_camera.fieldOfView - _minFov)/_fovDiff;
+		CurrentFoVCoefficient = (_camera.fieldOfView - _minFov)/_fovDiff;
 	}
 
 	public void OnCameraZoom(InputAction.CallbackContext value)
     {
 		if (value.performed)
-		{
-			_currentFoVCoefficient += value.ReadValue<float>();
-			_currentFoVCoefficient = Mathf.Clamp01(_currentFoVCoefficient);
-			_camera.fieldOfView = _minFov + (_fovDiff * _currentFoVCoefficient);
-		}
-    }
+			ChangeZoom(CurrentFoVCoefficient + value.ReadValue<float>());
+	}
+
+	public void ChangeZoom(float zoom)
+	{
+		CurrentFoVCoefficient = zoom;
+		UpdateZoom();
+	}
+
+	private void UpdateZoom()
+	{
+		CurrentFoVCoefficient = Mathf.Clamp01(CurrentFoVCoefficient);
+		_camera.fieldOfView = _maxFov - (_fovDiff * CurrentFoVCoefficient);
+	}
 }

@@ -835,6 +835,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 426809106370060142, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426809106370060142, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426809106370060142, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426809106370060142, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1761783881792461031, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -869,6 +889,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941973422185892626, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 330958568}
+    - target: {fileID: 2584669666455435453, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584669666455435453, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584669666455435453, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3718248422056651623, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
@@ -1013,6 +1053,41 @@ PrefabInstance:
     - target: {fileID: 4412958512794440904, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 330958568}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeZoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputCameraController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322048064602370713, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,

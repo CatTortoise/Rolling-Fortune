@@ -125,7 +125,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""id"": ""e6f64a07-8014-4396-9e15-e7a5c6331e26"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
-                    ""processors"": ""Invert,Scale(factor=0.0005)"",
+                    ""processors"": ""Scale(factor=0.0005)"",
                     ""groups"": ""PC"",
                     ""action"": ""ZoomCamera"",
                     ""isComposite"": false,
