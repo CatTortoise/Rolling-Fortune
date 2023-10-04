@@ -27,12 +27,12 @@ public class Gyro2D : InputBindingComposite<Vector2>
 
 	static Gyro2D()
 	{
-		InputSystem.RegisterBindingComposite<Gyro2D>();
+		Init();
 	}
 
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	static void Init()
 	{
-		InputSystem.RegisterBindingComposite<ClampMagnitude2D>();
+		InputSystem.RegisterBindingComposite<Gyro2D>();
 	}
 }

@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "f04c5e26-81fd-44c6-8bac-f67bbc4d2224",
                     "expectedControlType": "Vector2",
-                    "processors": "ClampMagnitude2D(_Magnitude=1)",
+                    "processors": "ClampMagnitude2D(magnitude=1)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ZoomCamera",
+                    "type": "Value",
+                    "id": "f59cd1fd-0505-471a-bc4d-5e6c892f2e5d",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -72,7 +81,7 @@
                     "id": "47587a38-0e4e-42da-a26b-90f17de9fb5e",
                     "path": "Gyro2D",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(_Magnitude=1)",
+                    "processors": "ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(magnitude=1)",
                     "groups": "",
                     "action": "TiltDelta",
                     "isComposite": true,
@@ -88,6 +97,17 @@
                     "action": "TiltDelta",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e6f64a07-8014-4396-9e15-e7a5c6331e26",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "Scale(factor=0.0005)",
+                    "groups": "PC",
+                    "action": "ZoomCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

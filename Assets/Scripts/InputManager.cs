@@ -50,10 +50,13 @@ public class InputManager : MonoBehaviour
 
 	public void SetPlayerInputAction(bool active)
 	{
-		if (active)
-			_playerActionMap.Enable();
-		else
-			_playerActionMap.Disable();
+        if (_playerActionMap != null)
+		{
+			if (active)
+				_playerActionMap.Enable();
+			else
+				_playerActionMap.Disable();
+		}
 	}
 
 	private void SetDeviceEnabled<T>(bool enabled) where T : InputDevice
