@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class EscapeHatch : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private LevelManager _levelManager;
     [SerializeField] private string _triggerByTag;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(_triggerByTag))
-			_player.OnEndLevel(transform);
+			_levelManager.OnLevelComplete();
     }
 
     public void OpenHatch()
@@ -17,10 +17,6 @@ public class EscapeHatch : MonoBehaviour
 		gameObject.SetActive(true);
 		DOAppear();
     }
-    public void CloseHatch()
-    {
-        gameObject.SetActive(false);
-	}
 
 	private void DOAppear()
 	{

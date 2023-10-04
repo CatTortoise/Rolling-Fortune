@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-	[SerializeField] private GameObject _inGameMenu;
-	[SerializeField] private GameObject _pauseMenu;
 	[SerializeField] private CameraPause _camera;
 	[SerializeField] private GameObject[] _objectsToToggle;
 	private bool _paused = false;
@@ -35,10 +33,9 @@ public class PauseManager : MonoBehaviour
 	{
 		_paused = paused;
 		_camera.SetPaused(paused);
-		_inGameMenu.SetActive(!paused);
-		_pauseMenu.SetActive(paused);
 		SetPlayerInputAction(!paused);
 		SetAllObjects(!paused);
+		ShowPauseMenu(paused);
 	}
 
 	private void ForceCurrentState()
@@ -55,6 +52,14 @@ public class PauseManager : MonoBehaviour
 	private void SetPlayerInputAction(bool active)
 	{
 		InputManager.Instance.SetPlayerInputAction(active);
+	}
+
+	private void ShowPauseMenu(bool pause)
+	{
+		if (pause)
+			MenuManager.Instance.ShowPauseMenu();
+		else
+			MenuManager.Instance.ShowInGameMenu();
 	}
 
 	private void ToggleState()

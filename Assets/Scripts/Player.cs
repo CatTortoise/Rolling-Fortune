@@ -13,17 +13,16 @@ public class Player : MonoBehaviour
         CurrentLives = maxLives;
     }
 
-    public void OnEndLevel(Transform escapeHatchTransform)
+    public void OnLevelComplete(Transform escapeHatchTransform)
     {
         _collider.enabled = false;
-		transform.DOMove(escapeHatchTransform.position, 2).SetEase(Ease.OutCirc).OnComplete(() => LevelTransitions.Instance.LoadIntoNextLevel());
-        UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, CurrentLives, true);
+		transform.DOMove(escapeHatchTransform.position, 2).SetEase(Ease.OutCirc);
     }
 
     public void OnDeath()
-    {
-        CurrentLives--;
-        LevelTransitions.Instance.RestartCurrentLevel();
-        UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, CurrentLives, false);
+	{
+		_collider.enabled = false;
+		CurrentLives--;
+        transform.DOScale(0, 0.5f).SetEase(Ease.InCirc);
 	}
 }

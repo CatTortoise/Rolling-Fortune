@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e3891f528bb984e8fb8970628154a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 8210133277328821715}
   _escapeHatch: {fileID: 9074439439890873339}
 --- !u!114 &6760522138861381813
 MonoBehaviour:
@@ -924,6 +925,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 8210133277328821715}
+    - target: {fileID: 1613952019232212762, guid: a50649efb5f190a4794a9ce32f3e6d63,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 436527559714196654}
     - target: {fileID: 4789327098650838017, guid: a50649efb5f190a4794a9ce32f3e6d63,
         type: 3}
       propertyPath: m_LocalPosition.x

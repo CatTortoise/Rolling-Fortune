@@ -19,7 +19,7 @@ public class GemManager : MonoBehaviour
 	private void GemCheck()
     {
         if (AllGemsCollected)
-			_levelManager.OpenEscapeHatch();
+			_levelManager.OnAllGemsCollected();
     }
 
     public void GemCollected(Gem gem)

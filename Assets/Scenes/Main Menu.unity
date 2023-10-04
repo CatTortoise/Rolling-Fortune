@@ -351,6 +351,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 172c7fc7-1a23-42b2-8410-52575257e781
     m_ActionName: UI/Pause[/Keyboard/escape,/Mouse/backButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f59cd1fd-0505-471a-bc4d-5e6c892f2e5d
+    m_ActionName: Player/ZoomCamera[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -392,6 +396,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116372492605909931, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _deathMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 116372492605909931, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _pauseMenu
+      value: 
+      objectReference: {fileID: 1961959411}
+    - target: {fileID: 116372492605909931, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _inGameMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 116372492605909931, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: _levelCompleteMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1761783881792461031, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -443,6 +467,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2446873014623367563, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981050357456256548, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981050357456256548, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981050357456256548, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981050357456256548, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -609,24 +653,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2118049766}
-    - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -637,19 +666,29 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 7040058672245340353, guid: 00ecb610ca8a0284090d45eabbe97b66,
+    - target: {fileID: 7413211363329845855, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354193390365337731, guid: 00ecb610ca8a0284090d45eabbe97b66,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8848160618611291704, guid: 00ecb610ca8a0284090d45eabbe97b66,
         type: 3}
       propertyPath: m_Name
       value: Play
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 116372492605909931, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3348647523555000216, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
+    - {fileID: 8933948495257010355, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
+    - {fileID: 2964492264750547775, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
+    - {fileID: 8241904769477343639, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
+    - {fileID: 7532733836889564794, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ecb610ca8a0284090d45eabbe97b66, type: 3}
@@ -695,6 +734,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 4a6c85507a665564a82e0f2a456745f7, type: 3}
   m_ActionId: e0b67c01-dfdc-48d8-8749-95784450e762
+--- !u!1 &1961959411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6269866191805612162, guid: 00ecb610ca8a0284090d45eabbe97b66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1423043940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118049765
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46693a42776f07943bd60b3c84a0bf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _analytics: {fileID: 0}
 --- !u!4 &2118049767
 Transform:
   m_ObjectHideFlags: 0

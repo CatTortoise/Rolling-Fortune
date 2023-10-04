@@ -32,6 +32,8 @@ public class LevelTransitions : MonoBehaviour
 			Destroy(_currentLevelInstance);
 		_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
 		_playerScore.ResetScore();
+		PauseManager.Instance.SetPaused(false);
+		MenuManager.Instance.ShowInGameMenu();
 	}
 
 	public void LoadIntoNextLevel()

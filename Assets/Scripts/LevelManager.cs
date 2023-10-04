@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+	[SerializeField] private Player _player;
 	[SerializeField] private EscapeHatch _escapeHatch;
 
 	private void OnValidate()
@@ -10,18 +11,22 @@ public class LevelManager : MonoBehaviour
 			_escapeHatch.gameObject.SetActive(false);
 	}
 
-	private void Start()
+	public void OnPlayerDeath()
 	{
-		CloseEscapeHatch();
+		_player.OnDeath();
+		MenuManager.Instance.ShowDeathMenu();
+		UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, _player.CurrentLives, false);
 	}
 
-	public void OpenEscapeHatch()
+	public void OnAllGemsCollected()
 	{
 		_escapeHatch.OpenHatch();
 	}
 
-	public void CloseEscapeHatch()
+	public void OnLevelComplete()
 	{
-		_escapeHatch.CloseHatch();
+		_player.OnLevelComplete(_escapeHatch.transform);
+		MenuManager.Instance.ShowLevelCompleteMenu();
+		UnityAnalyticsManager.Instance.LevelComplete(LevelTransitions.Instance.CurrentLevelIndex, _player.CurrentLives, true);
 	}
 }
