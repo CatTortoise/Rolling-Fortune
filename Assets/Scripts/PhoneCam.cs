@@ -127,17 +127,19 @@ public class PhoneCam : MonoBehaviour
 
     private string SnapshotName()
     {
-        return string.Format("{0}/Snapshots/snap_{1}x{2}_{3}.png",
-            Application.dataPath,
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+        string name = "/snap_{0}x{1}_{2}.png";
+        currentSnapshotPath = Application.persistentDataPath + string.Format(name,
             resWidth,
             resHeight,
-            System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+            dateTime); //mobile version
+        return currentSnapshotPath;
+        //"C:\Users\yotam\AppData\LocalLow\Tiltan\RollingFortune\Test.png" for pc
     }
 
     private IEnumerator SimpleCapture()
     {
         string fileName = SnapshotName();
-        currentSnapshotPath = fileName;
         string pathToSave = fileName;
         ScreenCapture.CaptureScreenshot(pathToSave);
         yield return new WaitForEndOfFrame();
