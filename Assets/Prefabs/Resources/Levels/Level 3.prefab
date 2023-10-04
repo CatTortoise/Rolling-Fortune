@@ -19874,6 +19874,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1837748991537210405}
+    - target: {fileID: 5725202752352523723, guid: c41a5a0a180c9c842b20b9f39081949a,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 7961913132317336920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20325,6 +20330,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1837748991537210405}
+    - target: {fileID: 5725202752352523723, guid: c41a5a0a180c9c842b20b9f39081949a,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 7961913132317336920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22075,6 +22085,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1837748991537210405}
+    - target: {fileID: 5725202752352523723, guid: c41a5a0a180c9c842b20b9f39081949a,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 7961913132317336920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22608,6 +22623,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7525724227658590710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7961913132317336920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 436527559714196654, guid: 404abb7c5cd64834588d082204db7878,
+    type: 3}
+  m_PrefabInstance: {fileID: 7525724227658590710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e3891f528bb984e8fb8970628154a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7812054149716704543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22765,6 +22792,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1837748991537210405}
+    - target: {fileID: 5725202752352523723, guid: c41a5a0a180c9c842b20b9f39081949a,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 7961913132317336920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

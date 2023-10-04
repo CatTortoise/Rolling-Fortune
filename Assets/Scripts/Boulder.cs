@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class Boulder : MonoBehaviour
 {
-    [SerializeField] private string triggerByTag;
-    [SerializeField] private Player _player;
+	[SerializeField] private LevelManager _levelManager;
+	[SerializeField] private string triggerByTag;
 
-    public void FreezeFor(float seconds)
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.collider.CompareTag(triggerByTag))
+			_levelManager.OnPlayerDeath();
+	}
+
+	public void FreezeFor(float seconds)
     {
         throw new NotImplementedException();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag(triggerByTag))
-			_player.OnDeath(); // TODO Display a "You died" screen
     }
 }
