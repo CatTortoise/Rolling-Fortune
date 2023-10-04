@@ -127,14 +127,8 @@ public class PhoneCam : MonoBehaviour
 
     private string SnapshotName()
     {
-        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-        string name = "/snap_{0}x{1}_{2}.png";
-        currentSnapshotPath = Application.persistentDataPath + string.Format(name,
-            resWidth,
-            resHeight,
-            dateTime); //mobile version
-        return currentSnapshotPath;
-        //"C:\Users\yotam\AppData\LocalLow\Tiltan\RollingFortune\Test.png" for pc
+        currentSnapshotPath = Application.persistentDataPath + "/test.png";
+        return Application.persistentDataPath + "/test.png";
     }
 
     private IEnumerator SimpleCapture()
@@ -153,6 +147,7 @@ public class PhoneCam : MonoBehaviour
             byte[] data = File.ReadAllBytes(filePath);
             texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
             texture.LoadImage(data);
+            Debug.Log("Image was found at: " + filePath);
         }
         else { Debug.Log("Could not find file at path: " + filePath); }
         return texture;
