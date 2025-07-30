@@ -10,7 +10,7 @@ public class ParticleDispenser : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = _target.transform.position;
-        Vector3 velocity = _rigidbody.velocity;
+        Vector3 velocity = _rigidbody.linearVelocity;
         Vector3 direction = velocity.normalized;
         Quaternion rotateTo = Quaternion.LookRotation(-direction, Vector3.up);
         gameObject.transform.rotation = rotateTo;
