@@ -14,10 +14,5 @@ namespace InGame
 			if (collision.collider.CompareTag(triggerByTag))
 				_levelManager.OnPlayerDeath();
 		}
-
-		public void FreezeFor(float seconds)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
