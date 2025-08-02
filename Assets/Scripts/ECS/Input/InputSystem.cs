@@ -1,6 +1,5 @@
 using UnityEngine;
 using Unity.Entities;
-using Unity.Collections;
 
 namespace Input
 {
@@ -16,12 +15,8 @@ namespace Input
 
 			void CreateSingletonInputEntity()
 			{
-				if (SystemAPI.HasSingleton<InputComponent>())
-					return;
-				NativeArray<ComponentType> types = new(1, Allocator.Temp);
-				types[0] = new(typeof(InputComponent), ComponentType.AccessMode.ReadWrite);
-				EntityManager.CreateEntity(types);
-				types.Dispose();
+				if (!SystemAPI.HasSingleton<InputComponent>())
+					EntityManager.AddComponent<InputComponent>(SystemHandle);
 			}
 		}
 
