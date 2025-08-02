@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Actions",
     "maps": [
         {
@@ -6,16 +7,7 @@
             "id": "e1b2e037-61a7-4cba-a909-0dde48ca7630",
             "actions": [
                 {
-                    "name": "TiltDelta",
-                    "type": "Value",
-                    "id": "474a55dd-b322-40ec-9a36-6246671c581b",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TiltCumulative",
+                    "name": "Tilt",
                     "type": "Value",
                     "id": "f04c5e26-81fd-44c6-8bac-f67bbc4d2224",
                     "expectedControlType": "Vector2",
@@ -27,7 +19,7 @@
                     "name": "ResetTilt",
                     "type": "Button",
                     "id": "8814a447-92b4-4b70-8243-0026d160e2d7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -50,9 +42,31 @@
                     "interactions": "",
                     "processors": "InvertVector2(invertY=false),SwapXY",
                     "groups": "Mobile;PC",
-                    "action": "TiltCumulative",
+                    "action": "Tilt",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Quaternion To Euler 2D",
+                    "id": "aa4a082d-fab3-465c-a7c3-a8f2c67e922d",
+                    "path": "QuaternionToEuler2D",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tilt",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "quaternionInput",
+                    "id": "2a782762-77e9-42ff-85c4-7f95d12f6672",
+                    "path": "<TrackedDevice>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mobile",
+                    "action": "Tilt",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -75,28 +89,6 @@
                     "action": "ResetTilt",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Gyro",
-                    "id": "47587a38-0e4e-42da-a26b-90f17de9fb5e",
-                    "path": "Gyro2D",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(magnitude=1)",
-                    "groups": "",
-                    "action": "TiltDelta",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "gyroInput",
-                    "id": "5f1c796f-f0ca-4d19-8a9c-7d1136f7dbd4",
-                    "path": "<Gyroscope>/angularVelocity",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mobile",
-                    "action": "TiltDelta",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",

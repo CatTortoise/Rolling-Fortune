@@ -93,16 +93,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
             ""id"": ""e1b2e037-61a7-4cba-a909-0dde48ca7630"",
             ""actions"": [
                 {
-                    ""name"": ""TiltDelta"",
-                    ""type"": ""Value"",
-                    ""id"": ""474a55dd-b322-40ec-9a36-6246671c581b"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TiltCumulative"",
+                    ""name"": ""Tilt"",
                     ""type"": ""Value"",
                     ""id"": ""f04c5e26-81fd-44c6-8bac-f67bbc4d2224"",
                     ""expectedControlType"": ""Vector2"",
@@ -114,7 +105,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""name"": ""ResetTilt"",
                     ""type"": ""Button"",
                     ""id"": ""8814a447-92b4-4b70-8243-0026d160e2d7"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -137,9 +128,31 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""InvertVector2(invertY=false),SwapXY"",
                     ""groups"": ""Mobile;PC"",
-                    ""action"": ""TiltCumulative"",
+                    ""action"": ""Tilt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Quaternion To Euler 2D"",
+                    ""id"": ""aa4a082d-fab3-465c-a7c3-a8f2c67e922d"",
+                    ""path"": ""QuaternionToEuler2D"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tilt"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""quaternionInput"",
+                    ""id"": ""2a782762-77e9-42ff-85c4-7f95d12f6672"",
+                    ""path"": ""<TrackedDevice>/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Mobile"",
+                    ""action"": ""Tilt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -162,28 +175,6 @@ public partial class @Actions: IInputActionCollection2, IDisposable
                     ""action"": ""ResetTilt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Gyro"",
-                    ""id"": ""47587a38-0e4e-42da-a26b-90f17de9fb5e"",
-                    ""path"": ""Gyro2D"",
-                    ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.03,y=0.03),InvertVector2,ClampMagnitude2D(magnitude=1)"",
-                    ""groups"": """",
-                    ""action"": ""TiltDelta"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""gyroInput"",
-                    ""id"": ""5f1c796f-f0ca-4d19-8a9c-7d1136f7dbd4"",
-                    ""path"": ""<Gyroscope>/angularVelocity"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mobile"",
-                    ""action"": ""TiltDelta"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -636,8 +627,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_TiltDelta = m_Player.FindAction("TiltDelta", throwIfNotFound: true);
-        m_Player_TiltCumulative = m_Player.FindAction("TiltCumulative", throwIfNotFound: true);
+        m_Player_Tilt = m_Player.FindAction("Tilt", throwIfNotFound: true);
         m_Player_ResetTilt = m_Player.FindAction("ResetTilt", throwIfNotFound: true);
         m_Player_ZoomCamera = m_Player.FindAction("ZoomCamera", throwIfNotFound: true);
         // UI
@@ -730,8 +720,7 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_TiltDelta;
-    private readonly InputAction m_Player_TiltCumulative;
+    private readonly InputAction m_Player_Tilt;
     private readonly InputAction m_Player_ResetTilt;
     private readonly InputAction m_Player_ZoomCamera;
     /// <summary>
@@ -746,13 +735,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public PlayerActions(@Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Player/TiltDelta".
+        /// Provides access to the underlying input action "Player/Tilt".
         /// </summary>
-        public InputAction @TiltDelta => m_Wrapper.m_Player_TiltDelta;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/TiltCumulative".
-        /// </summary>
-        public InputAction @TiltCumulative => m_Wrapper.m_Player_TiltCumulative;
+        public InputAction @Tilt => m_Wrapper.m_Player_Tilt;
         /// <summary>
         /// Provides access to the underlying input action "Player/ResetTilt".
         /// </summary>
@@ -787,12 +772,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @TiltDelta.started += instance.OnTiltDelta;
-            @TiltDelta.performed += instance.OnTiltDelta;
-            @TiltDelta.canceled += instance.OnTiltDelta;
-            @TiltCumulative.started += instance.OnTiltCumulative;
-            @TiltCumulative.performed += instance.OnTiltCumulative;
-            @TiltCumulative.canceled += instance.OnTiltCumulative;
+            @Tilt.started += instance.OnTilt;
+            @Tilt.performed += instance.OnTilt;
+            @Tilt.canceled += instance.OnTilt;
             @ResetTilt.started += instance.OnResetTilt;
             @ResetTilt.performed += instance.OnResetTilt;
             @ResetTilt.canceled += instance.OnResetTilt;
@@ -810,12 +792,9 @@ public partial class @Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="PlayerActions" />
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @TiltDelta.started -= instance.OnTiltDelta;
-            @TiltDelta.performed -= instance.OnTiltDelta;
-            @TiltDelta.canceled -= instance.OnTiltDelta;
-            @TiltCumulative.started -= instance.OnTiltCumulative;
-            @TiltCumulative.performed -= instance.OnTiltCumulative;
-            @TiltCumulative.canceled -= instance.OnTiltCumulative;
+            @Tilt.started -= instance.OnTilt;
+            @Tilt.performed -= instance.OnTilt;
+            @Tilt.canceled -= instance.OnTilt;
             @ResetTilt.started -= instance.OnResetTilt;
             @ResetTilt.performed -= instance.OnResetTilt;
             @ResetTilt.canceled -= instance.OnResetTilt;
@@ -1051,19 +1030,12 @@ public partial class @Actions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         /// <summary>
-        /// Method invoked when associated input action "TiltDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Tilt" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTiltDelta(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "TiltCumulative" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTiltCumulative(InputAction.CallbackContext context);
+        void OnTilt(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "ResetTilt" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
