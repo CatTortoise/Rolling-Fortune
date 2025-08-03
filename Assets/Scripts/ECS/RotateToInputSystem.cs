@@ -14,11 +14,6 @@ public partial struct RotateToInputSystem : ISystem
 		state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAll<RotateToInputComponent>().WithAllRW<LocalTransform>().Build());
 	}
 
-	public void OnDestroy(ref SystemState state)
-	{
-		_query.Dispose();
-	}
-
 	public void OnUpdate(ref SystemState state)
 	{
 		if (SystemAPI.TryGetSingleton<InputComponent>(out var input))
