@@ -38,7 +38,7 @@ namespace Input
 					input.ValueRW.tiltInput = tilt.ReadValue<Vector2>();
 				var resetTilt = player.ResetTilt;
 				if (resetTilt.enabled)
-					input.ValueRW.resetTilt = resetTilt.IsPressed();
+					input.ValueRW.resetTilt = resetTilt.IsPressed() || tilt.WasCompletedThisFrame();
 			}
 		}
 	}

@@ -1128,6 +1128,7 @@ GameObject:
   - component: {fileID: 6760522138861381813}
   - component: {fileID: 1332420028555229035}
   - component: {fileID: 3097050739825566856}
+  - component: {fileID: 233730682438728350}
   m_Layer: 0
   m_Name: Base Level
   m_TagString: Pauseable
@@ -1248,6 +1249,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationScale: 30
+--- !u!114 &233730682438728350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316771185489657884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3d92fc62d5cbc42b04812c293d35c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position:
+    enabled: 0
+    target:
+      x: 0
+      y: 0
+      z: 0
+    speed: 0
+  rotation:
+    enabled: 1
+    target:
+      x: 0
+      y: 0
+      z: 0
+    speed: 180
+  scale:
+    enabled: 0
+    target: 0
+    speed: 0
 --- !u!1 &6439510632511824188
 GameObject:
   m_ObjectHideFlags: 0
