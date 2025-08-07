@@ -6,30 +6,24 @@ namespace Input
 	[UpdateInGroup(typeof(InitializationSystemGroup))]
 	public partial class InputSystem : SystemBase
 	{
-		private Actions _actions;
+		private Actions Actions => SystemAPI.ManagedAPI.GetSingleton<InputActions>().actions;
 
 		protected override void OnCreate()
 		{
-			CreateSingletonInputEntity();
-			_actions = new();
-
-			void CreateSingletonInputEntity()
-			{
-				if (!SystemAPI.HasSingleton<InputComponent>())
-					EntityManager.AddComponent<InputComponent>(SystemHandle);
-			}
+			if (!SystemAPI.ManagedAPI.HasComponent<InputActions>(SystemHandle))
+				EntityManager.AddComponentObject(SystemHandle, new InputActions() { actions = new() });
+			if (!SystemAPI.HasComponent<InputComponent>(SystemHandle))
+				EntityManager.AddComponent<InputComponent>(SystemHandle);
 		}
 
-		protected override void OnDestroy() => _actions.Dispose();
+		protected override void OnStartRunning() => Actions.Enable();
 
-		protected override void OnStartRunning() => _actions.Enable();
-
-		protected override void OnStopRunning() => _actions.Disable();
+		protected override void OnStopRunning() => Actions.Disable();
 
 		protected override void OnUpdate()
 		{
-			var player = _actions.Player;
-			SetInput(SystemAPI.GetSingletonRW<InputComponent>());
+			var player = Actions.Player;
+			SetInput(SystemAPI.GetComponentRW<InputComponent>(SystemHandle));
 
 			void SetInput(RefRW<InputComponent> input)
 			{
