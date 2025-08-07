@@ -9,7 +9,7 @@ namespace Management
 {
 	public class InputManager : MonoBehaviour
 	{
-		public static Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.UniversalQuery.GetSingleton<Input.InputActions>().actions;
+		public static Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.UniversalQuery.GetSingleton<Actions>();
 
 		public static InputManager Instance { get; private set; }
 
@@ -19,13 +19,12 @@ namespace Management
 
 		private void Awake()
 		{
-			if (Instance == null)
+			if (!Instance)
 				Instance = this;
 		}
 
 		private void Start()
 		{
-			Actions.UI.Pause.Enable();
 			if (GyroAvailable())
 				SetInputSource(InputSource.Gyroscope);
 			else

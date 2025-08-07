@@ -17,8 +17,6 @@ namespace Management
 				Instance = this;
 		}
 
-		private void Start() => SetPaused(false);
-
 		private void OnEnable() => InputManager.Actions.UI.Pause.performed += OnPause;
 
 		private void OnDisable() => InputManager.Actions.UI.Pause.performed -= OnPause;

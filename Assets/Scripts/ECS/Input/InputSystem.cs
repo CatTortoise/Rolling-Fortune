@@ -6,12 +6,12 @@ namespace Input
 	[UpdateInGroup(typeof(InitializationSystemGroup))]
 	public partial class InputSystem : SystemBase
 	{
-		private Actions Actions => SystemAPI.ManagedAPI.GetSingleton<InputActions>().actions;
+		private Actions Actions => SystemAPI.ManagedAPI.GetSingleton<Actions>();
 
 		protected override void OnCreate()
 		{
-			if (!SystemAPI.ManagedAPI.HasComponent<InputActions>(SystemHandle))
-				EntityManager.AddComponentObject(SystemHandle, new InputActions() { actions = new() });
+			if (!SystemAPI.ManagedAPI.HasComponent<Actions>(SystemHandle))
+				EntityManager.AddComponentObject(SystemHandle, new Actions());
 			if (!SystemAPI.HasComponent<InputComponent>(SystemHandle))
 				EntityManager.AddComponent<InputComponent>(SystemHandle);
 		}
