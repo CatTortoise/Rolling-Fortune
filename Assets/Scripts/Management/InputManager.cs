@@ -1,7 +1,7 @@
 using System.Linq;
+using Unity.Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Unity.Entities;
 using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 using OnScreenStick = UnityEngine.InputSystem.OnScreen.OnScreenStick;
 
@@ -9,11 +9,12 @@ namespace Management
 {
 	public class InputManager : MonoBehaviour
 	{
-		public static Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.UniversalQuery.GetSingleton<Actions>();
+		public Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentObject<Actions>(_inputSystem);
 
 		public static InputManager Instance { get; private set; }
 
 		[SerializeField] private OnScreenStick _onScreenJoystick;
+		private SystemHandle _inputSystem;
 
 		public InputSource ActiveInput { get; private set; }
 
@@ -21,6 +22,7 @@ namespace Management
 		{
 			if (!Instance)
 				Instance = this;
+			_inputSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystem<Input.InputSystem>();
 		}
 
 		private void Start()
