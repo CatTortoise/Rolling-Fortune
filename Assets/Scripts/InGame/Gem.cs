@@ -9,13 +9,9 @@ namespace InGame
 	{
 		[SerializeField] private GemManager _gemManager;
 		[SerializeField] private MeshRenderer _renderer;
-		[SerializeField] private PlayerScoreScriptableObject _playerScore;
-		[SerializeField] private int _scoreForPickup = 5;
 		[SerializeField] private string _triggerByTag;
 		private Material _material;
 		private Transform _graphicsTransform;
-
-		public int ScoreForPickup { get => _scoreForPickup; }
 
 		private void Start()
 		{
@@ -32,7 +28,6 @@ namespace InGame
 
 		private void CollectGem()
 		{
-			_playerScore.RaiseScore(ScoreForPickup);
 			_gemManager.GemCollected(this);
 			DODisappear();
 		}

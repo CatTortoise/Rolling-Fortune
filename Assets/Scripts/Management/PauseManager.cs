@@ -6,8 +6,6 @@ namespace Management
 {
 	public class PauseManager : MonoBehaviour
 	{
-		[SerializeField] private CameraPause _camera;
-		[SerializeField] private GameObject[] _objectsToToggle;
 		private bool _paused = false;
 
 		public static PauseManager Instance { get; private set; }
@@ -35,21 +33,13 @@ namespace Management
 		public void SetPaused(bool paused)
 		{
 			_paused = paused;
-			_camera.SetPaused(paused);
 			SetPlayerInputAction(!paused);
-			SetAllObjects(!paused);
 			ShowPauseMenu(paused);
 		}
 
 		private void ForceCurrentState()
 		{
 			SetPaused(_paused);
-		}
-
-		private void SetAllObjects(bool active)
-		{
-			foreach (var obj in _objectsToToggle)
-				obj.SetActive(active);
 		}
 
 		private void SetPlayerInputAction(bool active)

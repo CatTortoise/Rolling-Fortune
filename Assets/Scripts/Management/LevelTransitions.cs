@@ -8,7 +8,6 @@ namespace Management
 		private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
 		private GameObject _currentLevelAsset;
 		private GameObject _currentLevelInstance;
-		[SerializeField] private PlayerScoreScriptableObject _playerScore;
 		[SerializeField] private Transform _spawnLevelHere;
 
 		public static LevelTransitions Instance { get; private set; }
@@ -34,7 +33,6 @@ namespace Management
 			if (_currentLevelInstance != null)
 				Destroy(_currentLevelInstance);
 			_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
-			_playerScore.ResetScore();
 			PauseManager.Instance.SetPaused(false);
 			MenuManager.Instance.ShowInGameMenu();
 		}
