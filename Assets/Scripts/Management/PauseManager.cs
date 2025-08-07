@@ -7,9 +7,9 @@ namespace Management
 {
 	public class PauseManager : MonoBehaviour
 	{
-		private bool _paused = false;
-
 		public static PauseManager Instance { get; private set; }
+
+		private bool _paused = false;
 
 		private void Awake()
 		{
@@ -19,10 +19,12 @@ namespace Management
 
 		private void Start() => SetPaused(false);
 
+		private void OnEnable() => InputManager.Actions.UI.Pause.performed += OnPause;
+
+		private void OnDisable() => InputManager.Actions.UI.Pause.performed -= OnPause;
+
 		public void OnPause(InputAction.CallbackContext context)
 		{
-			if (!context.performed)
-				return;
 			ToggleState();
 			ForceCurrentState();
 		}
@@ -49,11 +51,7 @@ namespace Management
 
 		private void ToggleState() => _paused = !_paused;
 
-		private void OnApplicationFocus(bool focus)
-		{
-			if (!focus)
-				SetPaused(true);
-		}
+		private void OnApplicationFocus(bool focus) => SetPaused(!focus);
 
 		private void SetSystemsPaused(bool paused)
 		{

@@ -128,32 +128,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 202558597918203200, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: _playerScore
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e518caaee83e2f4492db3d5de70e07c,
-        type: 2}
-    - target: {fileID: 202558597918203200, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: _spawnLevelHere
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 974601404381470749, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 2880810885275714818, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: InputModule
-      value: 
-      objectReference: {fileID: 133573250}
-    - target: {fileID: 2880810885275714818, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: _playerInput
-      value: 
-      objectReference: {fileID: 583290243}
     - target: {fileID: 2880810885275714818, guid: f63745c46baba68438f3ddbd8e6eb711,
         type: 3}
       propertyPath: _onScreenJoystick
@@ -209,34 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8763248584742918417, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 330958570}
-    - target: {fileID: 8763248584742918417, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: _objectsToToggle.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8763248584742918417, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: '_objectsToToggle.Array.data[0]'
-      value: 
-      objectReference: {fileID: 545793163}
-    - target: {fileID: 8763248584742918417, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      propertyPath: '_objectsToToggle.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1044085555635132262, guid: f63745c46baba68438f3ddbd8e6eb711,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 583290243}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63745c46baba68438f3ddbd8e6eb711, type: 3}
 --- !u!114 &133573249 stripped
 MonoBehaviour:
@@ -248,18 +203,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d5e79298ca87644c8aa8e2296c818ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &133573250 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7853872563013357456, guid: f63745c46baba68438f3ddbd8e6eb711,
-    type: 3}
-  m_PrefabInstance: {fileID: 133573248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &133573251 stripped
@@ -284,18 +227,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 465469e510cbe6d4ebd4d842ba085ec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &330958570 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3955564929167559769, guid: 32a3053d5a286344bb5098677df1b0db,
-    type: 3}
-  m_PrefabInstance: {fileID: 617502484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b69cc74745c3d4a88d3251ddba169a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &545793162
@@ -366,163 +297,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fd3415f7ba7a14d8eb628f92d68c7d, type: 3}
---- !u!1 &545793163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4117837195702530313, guid: 32fd3415f7ba7a14d8eb628f92d68c7d,
-    type: 3}
-  m_PrefabInstance: {fileID: 545793162}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &583290240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1044085555635132262, guid: f63745c46baba68438f3ddbd8e6eb711,
-    type: 3}
-  m_PrefabInstance: {fileID: 133573248}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &583290243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583290240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4a6c85507a665564a82e0f2a456745f7,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 133573250}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InputRigidbodyRotator, Assembly-CSharp
-        m_MethodName: OnTiltCumulative
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f04c5e26-81fd-44c6-8bac-f67bbc4d2224
-    m_ActionName: 'Player/Tilt[/Mouse/leftButton,/Mouse/delta]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InputRigidbodyRotator, Assembly-CSharp
-        m_MethodName: OnResetTilt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8814a447-92b4-4b70-8243-0026d160e2d7
-    m_ActionName: Player/ResetTilt
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5c91da86-2554-42e1-b030-2a6c162731b1
-    m_ActionName: UI/Navigate
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 518fe950-9848-4770-b830-e48d0301672c
-    m_ActionName: 'UI/Submit[/Keyboard/enter,/Keyboard/backspace]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 50db0130-3ff3-4e21-bf68-f39c8544785c
-    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5c0c6724-6c30-4456-a9ac-03a5db3c0e85
-    m_ActionName: 'UI/Point[/Device Simulator Touchscreen/touch0/position,/Device
-      Simulator Touchscreen/touch1/position,/Device Simulator Touchscreen/touch2/position,/Device
-      Simulator Touchscreen/touch3/position,/Device Simulator Touchscreen/touch4/position,/Device
-      Simulator Touchscreen/touch5/position,/Device Simulator Touchscreen/touch6/position,/Device
-      Simulator Touchscreen/touch7/position,/Device Simulator Touchscreen/touch8/position,/Device
-      Simulator Touchscreen/touch9/position,/Device Simulator Touchscreen/position,/Mouse/position]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92bc534a-8a29-4bea-95c7-014533a4555b
-    m_ActionName: 'UI/Click[/Mouse/leftButton,/Device Simulator Touchscreen/touch0/press,/Device
-      Simulator Touchscreen/touch1/press,/Device Simulator Touchscreen/touch2/press,/Device
-      Simulator Touchscreen/touch3/press,/Device Simulator Touchscreen/touch4/press,/Device
-      Simulator Touchscreen/touch5/press,/Device Simulator Touchscreen/touch6/press,/Device
-      Simulator Touchscreen/touch7/press,/Device Simulator Touchscreen/touch8/press,/Device
-      Simulator Touchscreen/touch9/press]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e0b67c01-dfdc-48d8-8749-95784450e762
-    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 133573249}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: OnPause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 172c7fc7-1a23-42b2-8410-52575257e781
-    m_ActionName: 'UI/Pause[/Keyboard/escape,/Mouse/backButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InputRigidbodyRotator, Assembly-CSharp
-        m_MethodName: OnTiltDelta
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 474a55dd-b322-40ec-9a36-6246671c581b
-    m_ActionName: Player/TiltDelta
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 330958568}
-        m_TargetAssemblyTypeName: InputCameraController, Assembly-CSharp
-        m_MethodName: OnCameraZoom
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f59cd1fd-0505-471a-bc4d-5e6c892f2e5d
-    m_ActionName: 'Player/RotateCamera[/Mouse/scroll/y]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1001 &617502484
 PrefabInstance:
   m_ObjectHideFlags: 0
