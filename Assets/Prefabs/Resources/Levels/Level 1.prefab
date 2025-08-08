@@ -2058,82 +2058,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[0]
+      propertyPath: '_gemList.Array.data[0]'
       value: 
       objectReference: {fileID: 7413040587933775945}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[1]
+      propertyPath: '_gemList.Array.data[1]'
       value: 
       objectReference: {fileID: 2237196049754405004}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[2]
+      propertyPath: '_gemList.Array.data[2]'
       value: 
       objectReference: {fileID: 4585855321130997215}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[3]
+      propertyPath: '_gemList.Array.data[3]'
       value: 
       objectReference: {fileID: 2865963755252869777}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[4]
+      propertyPath: '_gemList.Array.data[4]'
       value: 
       objectReference: {fileID: 6669798479728132306}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[5]
+      propertyPath: '_gemList.Array.data[5]'
       value: 
       objectReference: {fileID: 878199904344977208}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[6]
+      propertyPath: '_gemList.Array.data[6]'
       value: 
       objectReference: {fileID: 2326976797879810587}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[7]
+      propertyPath: '_gemList.Array.data[7]'
       value: 
       objectReference: {fileID: 6603124684420471389}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[8]
+      propertyPath: '_gemList.Array.data[8]'
       value: 
       objectReference: {fileID: 8149172103248951202}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[9]
+      propertyPath: '_gemList.Array.data[9]'
       value: 
       objectReference: {fileID: 8250122870614158812}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[10]
+      propertyPath: '_gemList.Array.data[10]'
       value: 
       objectReference: {fileID: 2143004298631970690}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[11]
+      propertyPath: '_gemList.Array.data[11]'
       value: 
       objectReference: {fileID: 4502948284354309818}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[12]
+      propertyPath: '_gemList.Array.data[12]'
       value: 
       objectReference: {fileID: 3495499261563027909}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[13]
+      propertyPath: '_gemList.Array.data[13]'
       value: 
       objectReference: {fileID: 5098371599153721575}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[14]
+      propertyPath: '_gemList.Array.data[14]'
       value: 
       objectReference: {fileID: 6522427304625904246}
     - target: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
-      propertyPath: _gemList.Array.data[15]
+      propertyPath: '_gemList.Array.data[15]'
       value: 
       objectReference: {fileID: 4427928172456402171}
     m_RemovedComponents: []

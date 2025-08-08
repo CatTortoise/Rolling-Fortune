@@ -133,7 +133,7 @@ MonoBehaviour:
   m_ForceUnique: 0
   m_Material:
     m_SupportsTemplate: 1
-    m_Template: {fileID: 0}
+    m_Template: {fileID: 11400000, guid: 1fe90b3087de68345a7271d145a805ac, type: 2}
     m_CollisionResponse:
       m_Override: 0
       m_Value: 0
