@@ -40,4 +40,7 @@ namespace Animation
 		public float targetLocal;
 		public float animationSpeed;
 	}
+
+	public struct DestroyOnAnimationEnd :IComponentData
+	{ }
 }

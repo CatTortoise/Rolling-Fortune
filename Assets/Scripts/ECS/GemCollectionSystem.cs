@@ -38,6 +38,7 @@ public partial struct GemCollectionSystem : ISystem
 			{
 				ecb.RemoveComponent<PhysicsCollider>(gemEntity);
 				ecb.SetComponentEnabled<ScaleAnimation>(gemEntity, true);
+				ecb.AddComponent<DestroyOnAnimationEnd>(gemEntity);
 			}
 		}
 	}

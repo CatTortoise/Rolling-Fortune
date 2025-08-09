@@ -119,4 +119,32 @@ namespace Animation
 			}
 		}
 	}
+
+	[UpdateAfter(typeof(ScaleSystem))]
+	[BurstCompile]
+	public partial struct DestroyOnAnimationEndSystem : ISystem
+	{
+		private EntityQuery _query;
+
+		public void OnCreate(ref SystemState state)
+		{
+			state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAll<DestroyOnAnimationEnd>().WithDisabled<ScaleAnimation>().Build());
+		}
+
+		public void OnUpdate(ref SystemState state)
+		{
+			new DestroyJob()
+			{
+				ecb = SystemAPI.GetSingleton<EndFixedStepSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged)
+			}.Schedule(_query);
+		}
+
+		[BurstCompile]
+		private partial struct DestroyJob : IJobEntity
+		{
+			public EntityCommandBuffer ecb;
+
+			public readonly void Execute(Entity entity) => ecb.DestroyEntity(entity);
+		}
+	}
 }
