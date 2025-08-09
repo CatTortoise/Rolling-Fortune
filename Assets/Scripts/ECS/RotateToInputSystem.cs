@@ -11,7 +11,7 @@ public partial struct RotateToInputSystem : ISystem
 
 	public void OnCreate(ref SystemState state)
 	{
-		state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAll<RotateToInputComponent>().WithPresentRW<Animation.RotationAnimation>().WithAllRW<LocalTransform>().Build());
+		state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAll<RotateToInputComponent>().WithPresentRW<Animation.RotationAnimationTarget>().WithAllRW<LocalTransform>().Build());
 	}
 
 	public void OnUpdate(ref SystemState state)
@@ -25,7 +25,7 @@ public partial struct RotateToInputSystem : ISystem
 	{
 		public float2 tilt;
 
-		public readonly void Execute(in RotateToInputComponent rotate, EnabledRefRW<Animation.RotationAnimation> resetting, ref LocalTransform transform)
+		public readonly void Execute(in RotateToInputComponent rotate, EnabledRefRW<Animation.RotationAnimationTarget> resetting, ref LocalTransform transform)
 		{
 			if (resetting.ValueRW = math.all(tilt == float2.zero))
 				return;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5403595027643647537}
   - component: {fileID: 3857889584778288266}
   - component: {fileID: 4388119892061617690}
+  - component: {fileID: 5781884798476412531}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Collectable
@@ -243,6 +244,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143d51918f5287f44aa423a5b3872c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gemManager: {fileID: 0}
-  _renderer: {fileID: 3857889584778288266}
-  _triggerByTag: Player
+--- !u!114 &5781884798476412531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158011280399577884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3d92fc62d5cbc42b04812c293d35c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position:
+    enabled: 0
+    target:
+      x: 0
+      y: 0
+      z: 0
+    speed: 0
+  rotation:
+    enabled: 0
+    target:
+      x: 0
+      y: 0
+      z: 0
+    speed: 0
+  rotationConstant:
+    enabled: 1
+    target:
+      x: 0
+      y: 45
+      z: 0
+    speed: 1
+  scale:
+    enabled: 1
+    target: 0
+    speed: 2

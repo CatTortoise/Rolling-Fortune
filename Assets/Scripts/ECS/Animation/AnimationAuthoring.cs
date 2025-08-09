@@ -9,6 +9,7 @@ namespace Animation
 	{
 		[SerializeField] private AnimationConfig<float3> position;
 		[SerializeField] private AnimationConfig<float3> rotation;
+		[SerializeField] private AnimationConfig<float3> rotationConstant;
 		[SerializeField] private AnimationConfig<float> scale;
 
 		public class Baker : Baker<AnimationAuthoring>
@@ -23,8 +24,12 @@ namespace Animation
 				}
 				if (authoring.rotation)
 				{
-					AddComponent(entity, new RotationAnimation() { targetLocal = math.radians(authoring.rotation.target), animationSpeed = math.radians(authoring.rotation.speed) });
-					SetComponentEnabled<RotationAnimation>(entity, false);
+					AddComponent(entity, new RotationAnimationTarget() { targetLocal = math.radians(authoring.rotation.target), animationSpeed = math.radians(authoring.rotation.speed) });
+					SetComponentEnabled<RotationAnimationTarget>(entity, false);
+				}
+				if (authoring.rotationConstant)
+				{
+					AddComponent<RotationAnimationConstant>(entity, math.radians(authoring.rotationConstant.target * authoring.rotationConstant.speed));
 				}
 				if (authoring.scale)
 				{

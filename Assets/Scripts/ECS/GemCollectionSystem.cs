@@ -37,7 +37,7 @@ public partial struct GemCollectionSystem : ISystem
 			if (BelongsTo(filterA, filterB, PLAYER_TAG, GEM_TAG, ref playerEntity, ref gemEntity))
 			{
 				ecb.RemoveComponent<PhysicsCollider>(gemEntity);
-				ecb.AddComponent<ScaleAnimation>(gemEntity, new() { animationSpeed = 2, targetLocal = 0f });
+				ecb.SetComponentEnabled<ScaleAnimation>(gemEntity, true);
 			}
 		}
 	}

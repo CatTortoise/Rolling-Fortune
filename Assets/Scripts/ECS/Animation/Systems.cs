@@ -40,7 +40,7 @@ namespace Animation
 
 		public void OnCreate(ref SystemState state)
 		{
-			state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAllRW<RotationAnimation, LocalTransform>().Build());
+			state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAllRW<RotationAnimationTarget, LocalTransform>().Build());
 		}
 
 		public void OnUpdate(ref SystemState state)
@@ -53,12 +53,41 @@ namespace Animation
 		{
 			public float deltaTime;
 
-			public readonly void Execute(ref RotationAnimation animation, EnabledRefRW<RotationAnimation> enabled, ref LocalTransform transform)
+			public readonly void Execute(ref RotationAnimationTarget animation, EnabledRefRW<RotationAnimationTarget> enabled, ref LocalTransform transform)
 			{
 				var euler = math.Euler(transform.Rotation);
 				Extensions.Approach(ref euler, animation.targetLocal, deltaTime * animation.animationSpeed);
 				transform.Rotation = quaternion.Euler(euler);
 				enabled.ValueRW = math.any(euler != animation.targetLocal);
+			}
+		}
+	}
+
+	[BurstCompile]
+	public partial struct RotationSystemConstant : ISystem
+	{
+		private EntityQuery _query;
+
+		public void OnCreate(ref SystemState state)
+		{
+			state.RequireForUpdate(_query = SystemAPI.QueryBuilder().WithAll<RotationAnimationConstant>().WithAllRW<LocalTransform>().Build());
+		}
+
+		public void OnUpdate(ref SystemState state)
+		{
+			new AnimateJob() { deltaTime = SystemAPI.Time.DeltaTime }.ScheduleParallel(_query);
+		}
+
+		[BurstCompile]
+		private partial struct AnimateJob : IJobEntity
+		{
+			public float deltaTime;
+
+			public readonly void Execute(in RotationAnimationConstant animation, ref LocalTransform transform)
+			{
+				var euler = math.Euler(transform.Rotation);
+				euler += animation.rotate * deltaTime;
+				transform.Rotation = quaternion.Euler(euler);
 			}
 		}
 	}
