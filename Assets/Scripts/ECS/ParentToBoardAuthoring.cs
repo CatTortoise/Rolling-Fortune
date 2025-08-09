@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Entities;
 using Unity.Transforms;
+using Input;
 
 namespace InGame
 {
