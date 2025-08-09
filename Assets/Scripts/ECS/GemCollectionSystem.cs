@@ -23,7 +23,7 @@ public partial struct GemCollectionSystem : ISystem
 	}
 
 	[BurstCompile]
-	public struct CollectGemsJob : ITriggerEventsJob
+	private struct CollectGemsJob : ITriggerEventsJob
 	{
 		public EntityCommandBuffer ecb;
 		[ReadOnly] public PhysicsWorld world;

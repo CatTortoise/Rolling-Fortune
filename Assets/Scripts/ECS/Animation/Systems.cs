@@ -133,8 +133,7 @@ namespace Animation
 
 		public void OnUpdate(ref SystemState state)
 		{
-			new DestroyJob()
-			{
+			new DestroyJob() {
 				ecb = SystemAPI.GetSingleton<EndFixedStepSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged)
 			}.Schedule(_query);
 		}
