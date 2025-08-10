@@ -63,11 +63,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -154,11 +149,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -245,11 +235,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -336,11 +321,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -605,11 +585,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -696,11 +671,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -876,11 +846,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -967,11 +932,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1147,11 +1107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1238,11 +1193,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1329,11 +1279,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1598,11 +1543,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1689,11 +1629,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1780,11 +1715,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1960,11 +1890,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2137,7 +2062,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4427928172456402171}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8063392951442391486, guid: 404abb7c5cd64834588d082204db7878, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8811246406889466822, guid: 404abb7c5cd64834588d082204db7878,
         type: 3}
@@ -2243,18 +2169,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7525724227658590710}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3864806868960084291 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6760522138861381813, guid: 404abb7c5cd64834588d082204db7878,
-    type: 3}
-  m_PrefabInstance: {fileID: 7525724227658590710}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb6be5ab3f1398f47bba4eddac3f4f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6715919678103382239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3837914685480124713, guid: 404abb7c5cd64834588d082204db7878,
@@ -2413,11 +2327,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyan gem (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 4388119892061617690, guid: 975347b9e8552124ca545870a4e6e8ae,
-        type: 3}
-      propertyPath: _gemManager
-      value: 
-      objectReference: {fileID: 3864806868960084291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

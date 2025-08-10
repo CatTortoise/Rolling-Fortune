@@ -23,24 +23,26 @@ namespace UI
 
 		private void Update()
 		{
-			if (CheckEscaped())
+			if (CheckEscapedThisFrame())
 				Escaped?.Invoke();
-			if (CheckDied())
+			if (CheckDiedThisFrame())
 				Died?.Invoke();
 		}
 
-		private bool CheckEscaped()
-		{
-			if (_escapedQuery.IsEmpty != _escaped)
-				return false;
-			return _escaped = true;
-		}
+		private bool CheckEscapedThisFrame() => ChangedThisFrame(ref _escaped, _escapedQuery);
 
-		private bool CheckDied()
+		private bool CheckDiedThisFrame() => ChangedThisFrame(ref _died, _diedQuery);
+
+		private static bool ChangedThisFrame(ref bool previous, EntityQuery thisFrame)
 		{
-			if (_diedQuery.IsEmpty != _died)
-				return false;
-			return _died = true;
+			var newValue = !thisFrame.IsEmpty;
+			var changed = (previous, newValue) switch
+			{
+				(false, true) => true,
+				_ => false
+			};
+			previous = newValue;
+			return changed;
 		}
 	}
 }

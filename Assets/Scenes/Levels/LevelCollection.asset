@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0954fc0aedfa89543ad0ed1895f88f22, type: 3}
+  m_Name: LevelCollection
+  m_EditorClassIdentifier: 
+  _levels:
+  - Id:
+      GlobalId:
+        SceneObjectIdentifier0: 102900000
+        SceneObjectIdentifier1: 0
+        AssetGUID:
+          Value:
+            x: 2123168904
+            y: 1284660627
+            z: 4191667841
+            w: 3136545527
+        IdentifierType: 1
+      GenerationType: 4
+  - Id:
+      GlobalId:
+        SceneObjectIdentifier0: 102900000
+        SceneObjectIdentifier1: 0
+        AssetGUID:
+          Value:
+            x: 704933654
+            y: 1247933061
+            z: 797835416
+            w: 1699190972
+        IdentifierType: 1
+      GenerationType: 4
+  - Id:
+      GlobalId:
+        SceneObjectIdentifier0: 102900000
+        SceneObjectIdentifier1: 0
+        AssetGUID:
+          Value:
+            x: 3369086653
+            y: 1295433263
+            z: 3270824869
+            w: 311343549
+        IdentifierType: 1
+      GenerationType: 4
+  - Id:
+      GlobalId:
+        SceneObjectIdentifier0: 102900000
+        SceneObjectIdentifier1: 0
+        AssetGUID:
+          Value:
+            x: 329816726
+            y: 1129764917
+            z: 2987105681
+            w: 2973584873
+        IdentifierType: 1
+      GenerationType: 4

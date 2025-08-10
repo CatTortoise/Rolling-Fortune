@@ -19,12 +19,14 @@ namespace Management
 
 		public static void StartGame()
 		{
-			SceneManager.LoadSceneAsync("Combined Levels", LoadSceneMode.Single);
+			PauseManager.Instance.SetPaused(false);
+			SceneManager.LoadSceneAsync("InGame", LoadSceneMode.Single);
 		}
 
 		public static void ExitToMainMenu()
 		{
 			DOTween.KillAll();
+			LevelTransitions.Instance.OnReturnToMainMenu();
 			SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Single);
 		}
 
