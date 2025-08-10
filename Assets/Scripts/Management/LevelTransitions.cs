@@ -1,22 +1,25 @@
 using UnityEngine;
+using Unity.Scenes;
+using Unity.Mathematics;
+using Unity.Entities;
+using Unity.Entities.Serialization;
 using UI;
 
 namespace Management
 {
 	public class LevelTransitions : MonoBehaviour
 	{
-		private const string RESOURCE_LEVEL_PATH = "Levels/Level ";
-		private GameObject _currentLevelAsset;
-		private GameObject _currentLevelInstance;
-		[SerializeField] private PlayerScoreScriptableObject _playerScore;
-		[SerializeField] private Transform _spawnLevelHere;
-
 		public static LevelTransitions Instance { get; private set; }
+
+		[SerializeField] private LevelCollection _levels;
+		private EntitySceneReference CurrentLevel => _levels[math.min(CurrentLevelIndex, _levels.Count-1)];
+		private Entity _currentLevelInstance;
+
 		public int CurrentLevelIndex { get; private set; }
 
 		private void Awake()
 		{
-			CurrentLevelIndex = 0;
+			CurrentLevelIndex = -1;
 			if (Instance == null)
 			{
 				Instance = this;
@@ -31,39 +34,32 @@ namespace Management
 
 		public void RestartCurrentLevel()
 		{
-			if (_currentLevelInstance != null)
-				Destroy(_currentLevelInstance);
-			_currentLevelInstance = Instantiate(_currentLevelAsset, _spawnLevelHere.transform);
-			_playerScore.ResetScore();
+			LoadLevel(CurrentLevel);
 			PauseManager.Instance.SetPaused(false);
-			MenuManager.Instance.ShowInGameMenu();
+			MenuManager.Instance.ShowInGameMenu(true);
 		}
 
 		public void LoadIntoNextLevel()
 		{
 			CurrentLevelIndex++;
-			LoadIntoLevel(CurrentLevelIndex);
+			LoadLevel(CurrentLevel);
+			MenuManager.Instance.ShowInGameMenu(true);
 		}
 
-		public void LoadIntoLevel(int level)
+		private Entity LoadLevel(EntitySceneReference level)
 		{
-			GameObject nextLevel = LoadLevelAsset(level);
-			if (nextLevel != null)
-			{
-				_currentLevelAsset = nextLevel;
-				RestartCurrentLevel();
-			}
+			TryDisposeCurrent();
+			return _currentLevelInstance = SceneSystem.LoadSceneAsync(World.DefaultGameObjectInjectionWorld.Unmanaged, level);
 		}
 
-		private GameObject LoadLevelAsset(int levelIndex)
-		{
-			GameObject level = (GameObject)Resources.Load(RESOURCE_LEVEL_PATH + levelIndex);
-			if (level != null)
-				Debug.Log("Loaded level.");
-			else
-				Debug.Log("Failed to load level.");
+		public void OnReturnToMainMenu() => TryDisposeCurrent();
 
-			return level;
+		private bool TryDisposeCurrent()
+		{
+			bool exists = World.DefaultGameObjectInjectionWorld.EntityManager.Exists(_currentLevelInstance);
+			if (exists)
+				World.DefaultGameObjectInjectionWorld.EntityManager.DestroyEntity(_currentLevelInstance);
+			return exists;
 		}
 	}
 }
