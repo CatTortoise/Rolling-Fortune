@@ -51,7 +51,7 @@ namespace Management
 
 		private void SetDeviceEnabled<T>(bool enabled) where T : InputDevice
 		{
-			foreach (var device in Actions.devices.Value.OfType<T>())
+			foreach (var device in Actions.devices.OfType<T>())
 			{
 				if (enabled)
 					InputSystem.EnableDevice(device);
@@ -60,7 +60,7 @@ namespace Management
 			}
 		}
 
-		private bool GyroAvailable() => Actions.devices.Value.OfType<Gyroscope>().Any();
+		private bool GyroAvailable() => Actions.devices.OfType<Gyroscope>().Any();
 
 		public enum InputSource
 		{

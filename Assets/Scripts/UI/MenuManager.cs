@@ -10,6 +10,7 @@ namespace UI
 		[SerializeField] private OptionsMenu _optionsMenu;
 		[SerializeField] private EndLevelMenu _levelCompleteMenu;
 		[SerializeField] private EndLevelMenu _deathMenu;
+		[SerializeField] private PlayerCallbacks uiCallbacks;
 
 		public static MenuManager Instance { get; private set; }
 
@@ -17,6 +18,18 @@ namespace UI
 		{
 			if (Instance == null)
 				Instance = this;
+		}
+
+		private void OnEnable()
+		{
+			uiCallbacks.Escaped += ShowLevelCompleteMenu;
+			uiCallbacks.Died += ShowDeathMenu;
+		}
+
+		private void OnDisable()
+		{
+			uiCallbacks.Escaped -= ShowLevelCompleteMenu;
+			uiCallbacks.Died -= ShowDeathMenu;
 		}
 
 		private void DisableAll()
