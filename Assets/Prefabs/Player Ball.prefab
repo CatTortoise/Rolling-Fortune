@@ -344,6 +344,6 @@ MonoBehaviour:
       z: 0
     speed: 0
   scale:
-    enabled: 0
+    enabled: 1
     target: 0
-    speed: 0
+    speed: 0.75
