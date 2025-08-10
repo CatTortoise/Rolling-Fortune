@@ -41,10 +41,13 @@ namespace Management
 
 		private void ShowPauseMenu(bool pause)
 		{
+			var menuManager = MenuManager.Instance;
+			if (!menuManager)
+				return;
 			if (pause)
-				MenuManager.Instance.ShowPauseMenu();
+				menuManager.ShowPauseMenu();
 			else
-				MenuManager.Instance.ShowInGameMenu();
+				menuManager.ShowInGameMenu();
 		}
 
 		private void ToggleState() => _paused = !_paused;
