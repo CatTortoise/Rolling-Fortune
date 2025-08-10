@@ -9,12 +9,11 @@ namespace Management
 {
 	public class InputManager : MonoBehaviour
 	{
-		public Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentObject<Actions>(_inputSystem);
+		public Actions Actions => World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentObject<Actions>(World.DefaultGameObjectInjectionWorld.GetExistingSystem<Input.InputSystem>());
 
 		public static InputManager Instance { get; private set; }
 
 		[SerializeField] private OnScreenStick _onScreenJoystick;
-		private SystemHandle _inputSystem;
 
 		public InputSource ActiveInput { get; private set; }
 
@@ -22,7 +21,6 @@ namespace Management
 		{
 			if (!Instance)
 				Instance = this;
-			_inputSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystem<Input.InputSystem>();
 		}
 
 		private void Start()
@@ -51,6 +49,8 @@ namespace Management
 
 		private void SetDeviceEnabled<T>(bool enabled) where T : InputDevice
 		{
+			if (Actions.devices == null)
+				return;
 			foreach (var device in Actions.devices.OfType<T>())
 			{
 				if (enabled)
@@ -60,7 +60,7 @@ namespace Management
 			}
 		}
 
-		private bool GyroAvailable() => Actions.devices.OfType<Gyroscope>().Any();
+		private bool GyroAvailable() => InputSystem.devices.OfType<Gyroscope>().Any();
 
 		public enum InputSource
 		{
